@@ -1,0 +1,73 @@
+@import "variables.less";
+
+body {
+  color: @text-color;
+  font-size: @base-font-size;
+  background-color: @light-color;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.main-header,
+.main-footer,
+.main-content {
+  max-width: @max-width-site;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: @max-width-container;
+  margin: 0 auto;
+}
+
+.main-header {
+  border-top: 1px solid transparent;
+  background-color: @bg-color;
+  .linear-gradient();
+  
+  .header-logo {
+    display: inline-block;
+    max-width: 180px;
+  }
+}
+
+
+.header-logo {
+  margin-top: 50px;
+}
+
+.main-nav {
+  float: right;
+  margin-top: 60px;
+  
+  ul {
+    font-family: @font-family-nav;
+    font-size: @nav-font-size;
+    color: @light-color;
+    
+    li {
+      display: inline-block;
+      text-transform: uppercase;
+      
+      &.active {
+        background-color: @brand-color;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+      
+      a {
+        display: block;
+        padding: 10px 20px;
+        color: @light-color;
+        text-decoration: none;
+        
+      }
+      
+    }
+  }
+}

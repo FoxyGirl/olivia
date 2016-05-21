@@ -1,7 +1,9 @@
 @import "variables.less";
 
+html,
 body {
   color: @text-color;
+  font-family: @font-family-base;
   font-size: @base-font-size;
   background-color: @light-color;
 }
@@ -25,23 +27,20 @@ body {
 }
 
 .wrap {
-    margin: 0 20px;  
+    margin: 0 20px;
+    border-top: 1px solid transparent;
 }
 
 /* Main header */
 .main-header {
-  border-top: 1px solid transparent;
   background:  url("../img/bg-rhomb.png") repeat,
                linear-gradient(-90deg,#7395f2,#af60e2); 
 
   .header-logo {
     display: inline-block;
     max-width: 180px;
+    margin-top: 50px;
   }
-}
-
-.header-logo {
-  margin-top: 50px;
 }
 
 .main-nav {
@@ -114,7 +113,7 @@ body {
     
     h2 {
       font-size: 60px;
-      font-weight: 600;
+      font-weight: 700;
       margin-top: 60px;
       margin-bottom: 35px;
       text-shadow: 2px 2px 0 rgba(0,0,0,0.35);
@@ -122,7 +121,7 @@ body {
     
     p {
       font-size: @base-font-size;
-      line-height: 2.2;
+      line-height: @line-height;
       padding-right: 95px;
       margin-bottom: 45px;
     }
@@ -158,6 +157,99 @@ body {
   }
 }
 
+/* Main Content */
 .main-content {
+  p {
+    line-height: @line-height;
+    margin: 0;
+  }
+}
+
+.light-theme {
+  color: @text-color;
+  background-color: @bg-color-light;
+}
+
+.dark-theme {
   .linear-gradient()
+}
+
+.dark-header {
+  font-size: @large-font-size;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 106px;
+  margin-bottom: 20px;
+}
+
+.features {
+  background: url("../img/bg-features.jpg") center no-repeat;
+  background-size: cover;
+  
+  p {
+    text-align: center;
+    padding: 0 50px;
+  }
+}
+
+.features-all {
+  margin-top: 110px;
+  margin-bottom: 130px;
+}
+
+.feauture-item {
+  width: 33.333%;
+  float: left;
+  
+  
+  a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    
+    h4{
+      margin-top: 10px;
+      margin-bottom: 15px;
+      color: @text-color;
+      font-weight: 600;
+      font-size: floor(@large-font-size/2);
+    }
+    
+    .feauture-img {
+      display: inline-block;
+      width: 130px;
+      height: 130px;
+      background: url("../img/sprite-img.png") 0 0 no-repeat;
+    }
+    
+    .item-listen {
+      background-position: 0 -260px;
+    }
+    
+    .item-gallery {
+      background-position: 0 0;
+    }
+    
+    .item-gallery {
+      background-position: 0 -520px;
+    }
+    
+    &:hover {
+      h4 {
+        color: @brand-color;
+      }
+      
+      .item-full {
+        background-position: 0 -130px;
+      }
+      
+      .item-listen {
+        background-position: 0 -390px;
+      }
+      
+      .item-gallery {
+        background-position: 0 -650px;
+      }
+    }
+  }
 }

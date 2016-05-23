@@ -2,7 +2,7 @@
 
 html,
 body {
-  color: @text-color;
+  color: @light-color;
   font-family: @font-family-base;
   font-size: @base-font-size;
   background-color: @light-color;
@@ -170,11 +170,7 @@ body {
   background-color: @bg-color-light;
 }
 
-.dark-theme {
-  .linear-gradient()
-}
-
-.dark-header {
+.middle-header {
   font-size: @large-font-size;
   font-weight: 400;
   text-align: center;
@@ -251,5 +247,54 @@ body {
         background-position: 0 -650px;
       }
     }
+  }
+}
+
+
+.checkout {
+  position: relative;
+  min-height: 805px;
+  .linear-gradient(@angleInvert; @bg-color-1; @bg-color-2);
+  
+  h2 {
+    margin-bottom: 115px;
+  }
+}
+
+.checkout-text {
+  width: 50%;
+  
+  h3 {
+    position: relative;
+    font-size: @mdl-font-size;
+    font-weight: 600;
+    padding-left: 70px;
+    margin-bottom: 10px;
+    
+    .checkout-fa {
+      position: absolute;
+      font-size: 42px;
+      left: 7px;
+      top: -10px;
+    }
+  }
+  
+  p {
+    font-size: @base-font-size;
+    padding-left: 70px;
+    margin-bottom: 45px;
+  }
+}
+
+.checkout-image {
+  position: absolute;
+  bottom: 0;
+  right: 50px;
+  width: 45%;
+  max-height: 550px;
+  overflow: hidden;
+  
+  img {
+    max-width: 100%;
   }
 }

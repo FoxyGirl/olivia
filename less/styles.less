@@ -34,7 +34,7 @@ body {
 /* Main header */
 .main-header {
   background:  url("../img/bg-rhomb.png") repeat,
-               linear-gradient(-90deg,#7395f2,#af60e2); 
+               linear-gradient(@angle, @bg-color-1, @bg-color-2); 
 
   .header-logo {
     display: inline-block;
@@ -179,7 +179,7 @@ body {
 }
 
 .features {
-  background: url("../img/bg-features.jpg") center no-repeat;
+  background: #f7e5ff url("../img/bg-features.jpg") center no-repeat;
   background-size: cover;
   
   p {
@@ -296,5 +296,52 @@ body {
   
   img {
     max-width: 100%;
+  }
+}
+
+.screenshots {
+  background: #f7e5ff url("../img/bg-screenshorts.jpg") center no-repeat;
+  background-size: cover; 
+}
+
+.screenshorts-gallery {
+  max-width: @max-width-container;
+  text-align: center;
+  font-size: 0;
+  
+  &-content {
+    margin-bottom: 38px;
+  }
+  
+  &-item {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 17px;
+    
+    &:first-child {
+      margin-left: 0;
+    }
+    
+    &:last-child {
+      margin-right: 0;
+    }
+    
+    a {
+      display: block;
+      position: relative;
+      
+      &:hover {
+        
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background:  url("../img/item-plus.png") center center no-repeat,
+               linear-gradient(-135deg, @bg-color-1-78, @bg-color-2-78); 
+        }
+      }
+    }
   }
 }

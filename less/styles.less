@@ -361,13 +361,7 @@ body {
     font-size: 0;
     
     i {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      margin: 0 6px;
-      border-radius: 50%;
-      border: 2px solid @brand-color;
-      background: transparent;
+      .controls();
       
       &.active {
         background: @brand-color;
@@ -376,3 +370,29 @@ body {
   }
   
 }
+
+.testimonial {
+  min-height: 520px;
+  .linear-gradient(@angle; @bg-color-1; @bg-color-2);
+}
+
+  .testimonial-slaider {
+    margin-top: 135px;
+  
+    &-content {
+      min-height: 270px;
+    }
+
+    &-item {
+      float: left;
+
+      img {
+        float: left;
+        width: 197px;
+        height: 197px;
+        margin-top: 45px;
+        border-radius: 50%;
+        border: 5px solid @light-color;
+      }
+    }
+  }

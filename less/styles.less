@@ -376,7 +376,7 @@ body {
   .linear-gradient(@angle; @bg-color-1; @bg-color-2);
 }
 
-  .testimonial-slaider {
+  .slaider {
     margin-top: 135px;
   
     &-content {
@@ -386,13 +386,37 @@ body {
     &-item {
       float: left;
 
-      img {
+      &-photo {
         float: left;
         width: 197px;
         height: 197px;
-        margin-top: 45px;
+        margin-right: 45px;
         border-radius: 50%;
         border: 5px solid @light-color;
+        background: #fff url(../img/photo-lura_moore.jpg)  center no-repeat;
+        background-size: 247px;
+      }
+      
+      &-text {
+        float: left;
+        width: 70.588%;
+        background: #555555;
+      }
+      
+      &-blockquote {
+        position: relative;
+        padding-left: 50px;
+        margin-top: 30px;
+        
+        &:before {
+          content: "“";
+          display: block;
+          position: absolute;
+          left: 0px;
+          top: -18px;
+          font-family: @font-family-serif;
+          font-size: @large-font-size;
+        }
       }
     }
   }

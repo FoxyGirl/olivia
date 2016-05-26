@@ -320,22 +320,15 @@ body {
   font-size: 0;
   
   &-content {
-    margin-bottom: 38px;
+    margin: 0 -17px 38px -17px;
+    overflow: hidden;
   }
   
   &-item {
     display: inline-block;
     vertical-align: top;
     margin: 0 17px;
-    
-    &:first-child {
-      margin-left: 0;
-    }
-    
-    &:last-child {
-      margin-right: 0;
-    }
-    
+ 
     a {
       display: block;
       position: relative;
@@ -400,22 +393,51 @@ body {
       &-text {
         float: left;
         width: 70.588%;
-        background: #555555;
+        
+        cite {
+          display: block;
+          padding-left: 50px;
+          font-style: normal;
+          
+          span {
+            text-transform: uppercase;
+          }
+          
+          a {
+            text-decoration: none;
+            color: @light-color;
+          }
+        }
       }
       
       &-blockquote {
         position: relative;
         padding-left: 50px;
         margin-top: 30px;
+        margin-bottom: 37px;
+        line-height: @line-height;
         
         &:before {
           content: "“";
           display: block;
           position: absolute;
-          left: 0px;
-          top: -18px;
+          left: 0;
+          top: -35px;
           font-family: @font-family-serif;
           font-size: @large-font-size;
+        }
+        
+        .text-end {
+          position: relative;
+          
+          &:after {
+            content: "„";
+            position: absolute;
+            right: -45px;
+            bottom: -32px;
+            font-family: @font-family-serif;
+            font-size: @large-font-size;
+          }
         }
       }
     }

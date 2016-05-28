@@ -62,7 +62,8 @@ body {
           }
         }
         
-        a:hover {
+        a:hover,
+        &:active {
           .active-nav();
         }
       }
@@ -231,7 +232,8 @@ body {
       background-position: 0 -520px;
     }
     
-    &:hover {
+    &:hover,
+    &:active {
       h4 {
         color: @brand-color;
       }
@@ -333,7 +335,8 @@ body {
       display: block;
       position: relative;
       
-      &:hover {
+      &:hover,
+      &:active {
         
         &:before {
           content: '';
@@ -362,12 +365,13 @@ body {
   
 }
 
+/* Testimonial Section */
 .testimonial {
   min-height: 520px;
   .linear-gradient(@angle; @bg-color-1; @bg-color-2);
 }
 
-  .slaider {
+.slaider {
     margin-top: 135px;
     margin-bottom: 40px;
   
@@ -452,3 +456,120 @@ body {
       }
     }
   }
+
+/* Support Section */
+.support {
+  address {
+    margin-bottom: 100px;
+    text-align: center;
+    font-size: @base-font-size + 11;
+    font-style: normal;
+    
+    a {
+      text-decoration: none;
+      color: @text-color;
+      
+      &:hover,
+      &:active {
+        color: @brand-color;
+      }
+    }
+  }
+  
+  &-content {
+    margin-bottom: -150px;
+    
+    &-item {
+      width: 45.73%;
+      margin-bottom: 60px;
+      border-top: 1px solid transparent;
+      
+      &:nth-child(odd) {
+        float: left;
+      }
+      
+      &:nth-child(even) {
+        float: right;
+      }
+    }
+
+    &-photo {
+      position: relative;
+      float: left;
+      width: 192px;
+      height: 192px;
+      border-radius: 50%;
+      .linear-gradient(@angle; @bg-color-1; @bg-color-2);      
+      
+      &.photo-right {
+        float: right;
+      }
+      
+      img {
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        width: 168px;
+        height: 168px;
+        border: 8px solid @light-color;
+        border-radius: 50%;
+      }
+    }
+    
+    &-text {
+      text-align: right;
+      margin-right: 227px;
+      
+      .support-name {
+        margin-top: 15px;
+        margin-bottom: 0;
+        font-size: @nav-font-size;
+        font-weight: 600;
+      }
+      
+      .support-position {
+        margin-top: 0;
+        margin-bottom: 14px;
+        padding-bottom: 13px;
+        border-bottom: 1px solid @text-color;
+      }
+      
+      .support-description {
+        margin-top: 0;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+      }
+      
+      .support-social-contacts {
+        margin: 0;
+        list-style-type: none;
+        font-size: @mdl-font-size;
+        
+        li {
+          display: inline-block;
+          margin: 0 7px;
+          
+          &:last-child {
+            margin-right: 0;
+          }
+          
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+        
+        a {
+          display: block;          
+          color: @text-color;
+          
+          &:hover,
+          &:active {
+            color: @brand-color;
+          }
+        }
+      }
+    }
+    
+  }
+
+}

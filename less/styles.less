@@ -477,99 +477,106 @@ body {
   }
   
   &-content {
-    margin-bottom: -150px;
-    
-    &-item {
-      width: 45.73%;
-      margin-bottom: 60px;
-      border-top: 1px solid transparent;
+    margin-bottom: -150px;    
+  }
+  
+  .support-item-photo {
+    position: relative;
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+    .linear-gradient(@angle; @bg-color-1; @bg-color-2);      
+
+    img {
+      .zero-centered();
+      width: 168px;
+      height: 168px;
+      border: 8px solid @light-color;
+      border-radius: 50%;
+    }
+  }
+  
+  &-item {
+    width: 45.73%;
+    margin-bottom: 60px;
+    border-top: 1px solid transparent;
+
+    &:nth-child(odd) {
+      float: left;
       
-      &:nth-child(odd) {
-        float: left;
+      .support-item-text {
+        text-align: right;
+        margin-right: 227px;
       }
       
-      &:nth-child(even) {
+      .support-item-photo {
         float: right;
+      }
+      
+    }
+
+    &:nth-child(even) {
+      float: right;
+      
+      .support-item-text {
+        text-align: left;
+        margin-left: 227px;
+      }
+      
+      .support-item-photo {
+        float: left;
+      }
+    }
+  } 
+    
+  .support-name {
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: @nav-font-size;
+    font-weight: 600;
+  }
+
+  .support-position {
+    margin-top: 0;
+    margin-bottom: 14px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid @text-color;
+  }
+
+  .support-description {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .support-social-contacts {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: @mdl-font-size;
+
+    li {
+      display: inline-block;
+      margin: 0 7px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:first-child {
+        margin-left: 0;
       }
     }
 
-    &-photo {
-      position: relative;
-      float: left;
-      width: 192px;
-      height: 192px;
-      border-radius: 50%;
-      .linear-gradient(@angle; @bg-color-1; @bg-color-2);      
-      
-      &.photo-right {
-        float: right;
-      }
-      
-      img {
-        position: absolute;
-        left: 4px;
-        top: 4px;
-        width: 168px;
-        height: 168px;
-        border: 8px solid @light-color;
-        border-radius: 50%;
+    a {
+      display: block;          
+      color: @text-color;
+
+      &:hover,
+      &:active {
+        color: @brand-color;
       }
     }
-    
-    &-text {
-      text-align: right;
-      margin-right: 227px;
-      
-      .support-name {
-        margin-top: 15px;
-        margin-bottom: 0;
-        font-size: @nav-font-size;
-        font-weight: 600;
-      }
-      
-      .support-position {
-        margin-top: 0;
-        margin-bottom: 14px;
-        padding-bottom: 13px;
-        border-bottom: 1px solid @text-color;
-      }
-      
-      .support-description {
-        margin-top: 0;
-        margin-bottom: 10px;
-        padding-bottom: 10px;
-      }
-      
-      .support-social-contacts {
-        margin: 0;
-        list-style-type: none;
-        font-size: @mdl-font-size;
-        
-        li {
-          display: inline-block;
-          margin: 0 7px;
-          
-          &:last-child {
-            margin-right: 0;
-          }
-          
-          &:first-child {
-            margin-left: 0;
-          }
-        }
-        
-        a {
-          display: block;          
-          color: @text-color;
-          
-          &:hover,
-          &:active {
-            color: @brand-color;
-          }
-        }
-      }
-    }
-    
   }
 
 }

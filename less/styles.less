@@ -349,9 +349,7 @@ body {
   }
   
   &-controls {
-    margin-bottom: 119px;
-    text-align: center;
-    font-size: 0;
+    .controls-block(119px);
     
     i {
       .controls();
@@ -371,6 +369,7 @@ body {
 
   .slaider {
     margin-top: 135px;
+    margin-bottom: 40px;
   
     &-content {
       min-height: 270px;
@@ -383,36 +382,35 @@ body {
         float: left;
         width: 197px;
         height: 197px;
-        margin-right: 45px;
+        margin-right: 95px;
         border-radius: 50%;
         border: 5px solid @light-color;
         background: #fff url(../img/photo-lura_moore.jpg)  center no-repeat;
         background-size: 247px;
       }
       
+      @cite-padding-left: 0;
+      
       &-text {
         float: left;
-        width: 70.588%;
+        width: 70.588%;        
         
         cite {
-          display: block;
-          padding-left: 50px;
           font-style: normal;
-          
+
           span {
             text-transform: uppercase;
           }
-          
-          a {
-            text-decoration: none;
-            color: @light-color;
-          }
+        }
+
+        a {
+          text-decoration: none;
+          color: @light-color;
         }
       }
       
       &-blockquote {
         position: relative;
-        padding-left: 50px;
         margin-top: 30px;
         margin-bottom: 37px;
         line-height: @line-height;
@@ -421,7 +419,7 @@ body {
           content: "“";
           display: block;
           position: absolute;
-          left: 0;
+          left: -45px;
           top: -35px;
           font-family: @font-family-serif;
           font-size: @large-font-size;
@@ -438,6 +436,18 @@ body {
             font-family: @font-family-serif;
             font-size: @large-font-size;
           }
+        }
+      }
+    }
+    
+    &-controls {
+      .controls-block();
+
+      i {
+        .controls(@light-color);
+
+        &.active {
+          background: @light-color;
         }
       }
     }

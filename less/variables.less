@@ -66,3 +66,15 @@
   text-align: center;
   font-size: 0;
 }
+
+.placeholder-color(@color: red) {
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+  &::-moz-placeholder {
+    color: @color;
+  }
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+}

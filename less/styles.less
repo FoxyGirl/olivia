@@ -578,5 +578,57 @@ body {
       }
     }
   }
+}
 
+/* Newsletter Section */
+.newsletter {
+  .linear-gradient(@angleInvert; @bg-color-1; @bg-color-2);
+  
+  .middle-header {
+    margin-top: 83px;
+    margin-bottom: 25px;
+  }
+  
+  p {
+    text-align: center;
+  } 
+}
+
+form[name="subscribe"] {
+  margin-top: 50px;
+  margin-bottom: 135px;
+  text-align: center;
+
+  input {
+    width: 28.72%;
+    padding: 18px 18px 18px 60px;
+    margin-right: 12px;
+    outline: none;
+    border: 2px solid @light-color;
+    background-color: transparent;
+    color: @light-color;
+    .border-round-coner(4px); 
+    .placeholder-color(@light-color);
+    
+    &[type="email"] {
+      background-image: url("../img/sprite-img.png");
+      background-repeat: no-repeat;
+      background-position: -34px -807px;
+    }
+  }
+}
+
+
+.btn {
+  padding: 18px 35px;
+  border: 2px solid @brand-color;
+  .border-round-coner(4px);
+  text-transform: uppercase;
+  font-weight: 600;
+  outline: none;
+  
+  &.btn-submit {
+    background-color: @brand-color;
+    color: @light-color;
+  }
 }

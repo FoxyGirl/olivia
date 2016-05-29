@@ -304,7 +304,7 @@ body {
 
 /* Screenshots Section */
 .screenshots {
-  background: #f7e5ff url("../img/bg-screenshorts.jpg") center no-repeat;
+  background: @bg-color-light url("../img/bg-screenshorts.jpg") center no-repeat;
   background-size: cover; 
   
   h3 {
@@ -634,11 +634,11 @@ form[name="subscribe"] {
 
 /* Blog Post Section */
 .blog-post {
-  background: #fff url() 0 0 no-repeat;
+  background: @bg-color-light url("../img/bg-blog_post.jpg") center no-repeat;
 }
 
 .blog-post-slaider {
-  margin-bottom: 100px;
+  margin-bottom: 75px;
   
   &-content {
     margin-bottom: 8px;
@@ -646,14 +646,54 @@ form[name="subscribe"] {
   
   &-item {
     width: 44.35%;
+    margin-bottom: 53px;
+    
+    &:nth-child(odd) {
+      float: left;
+    }
+    
+    &:nth-child(even) {
+      float: right;
+    }
   }
   
   &-date {
+    position: relative;
     float: left;
     width: 70px;
     height: 100px;
+    text-align: center;
     color: @light-color;
     background-color: @brand-color;
+    
+    &:after {
+      content: "";      
+      position: absolute;
+      right: -10px;
+      top: 6px;
+      display: block;
+      .triangle(right; 20px; @brand-color);
+    }
+    
+    &.special-date {
+      background-color: @special-color;
+      
+      &:after {
+        .triangle(right; 20px; @special-color);
+      }
+    }
+    
+    .date-number {
+      display: block;
+      font-weight: 800;
+      font-size: @base-font-size + 20;
+    }
+    
+    .date-other {
+      display: block;
+      font-weight: 300;
+      font-size: @nav-font-size;
+    }
   }
   
   &-text {
@@ -694,6 +734,18 @@ form[name="subscribe"] {
         &:active {
           color: @brand-color;
         }
+      }
+    }
+  }
+  
+  &-controls {
+    .controls-block(104px);
+    
+    i {
+      .controls();
+      
+      &.active {
+        background: @brand-color;
       }
     }
   }

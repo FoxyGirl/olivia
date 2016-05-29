@@ -618,7 +618,6 @@ form[name="subscribe"] {
   }
 }
 
-
 .btn {
   padding: 18px 35px;
   border: 2px solid @brand-color;
@@ -630,5 +629,72 @@ form[name="subscribe"] {
   &.btn-submit {
     background-color: @brand-color;
     color: @light-color;
+  }
+}
+
+/* Blog Post Section */
+.blog-post {
+  background: #fff url() 0 0 no-repeat;
+}
+
+.blog-post-slaider {
+  margin-bottom: 100px;
+  
+  &-content {
+    margin-bottom: 8px;
+  }
+  
+  &-item {
+    width: 44.35%;
+  }
+  
+  &-date {
+    float: left;
+    width: 70px;
+    height: 100px;
+    color: @light-color;
+    background-color: @brand-color;
+  }
+  
+  &-text {
+    padding-left: 100px;
+    
+    h4 {
+      margin-top: 0;
+      margin-bottom: 4px;
+      font-weight: 600;
+      font-size: @nav-font-size;
+      color: @text-color;
+      
+      a {
+        text-decoration: none;
+        color: @text-color;
+        
+        &:hover,
+        &:active {
+          color: @brand-color;
+        }
+      }
+    }
+    
+    p {
+      margin: 0;
+      font-size: @small-font-size;
+      line-height: @line-height;
+      
+      i {
+        margin-right: 17px;
+      }
+      
+      a {
+        text-decoration: none;
+        color: @text-color;
+        
+        &:hover,
+        &:active {
+          color: @brand-color;
+        }
+      }
+    }
   }
 }

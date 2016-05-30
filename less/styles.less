@@ -750,3 +750,61 @@ form[name="subscribe"] {
     }
   }
 }
+
+.main-footer {
+  .linear-gradient(@angle; @bg-color-1; @bg-color-2);
+  
+  p {
+    line-height: @line-height;
+    margin: 0;
+    margin-bottom: 60px;
+    text-align: center;
+    padding: 0 50px;
+  }
+}
+
+form[name="contactInform"] {
+  position: relative;
+  margin-bottom: 70px;
+  
+  input {
+    display: block;    
+    float: left;
+    box-sizing: border-box;
+    width: 23.5%;
+    margin-right: 2%;
+    margin-bottom: 17px;
+    padding: 15px;
+    color: @text-color;
+    outline: none;
+    border: none;
+    .placeholder-color(@text-color);
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    resize: none;
+    color: @text-color;
+    outline: none;
+    border: none;
+    .placeholder-color(@text-color);
+  }
+  
+  .btn-submit {
+    position: absolute;
+    box-sizing: border-box;
+    display: inline-block;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 160px;
+    padding-right: 160px;
+    border-radius: 0;
+  }
+}

@@ -763,6 +763,7 @@ form[name="subscribe"] {
   }
 }
 
+/* Get in Touch Section */
 form[name="contactInform"] {
   position: relative;
   margin-bottom: 70px;
@@ -806,5 +807,40 @@ form[name="contactInform"] {
     padding-left: 160px;
     padding-right: 160px;
     border-radius: 0;
+  }
+}
+
+.social-contacts {
+  list-style-type: none;
+  text-align: center;
+  font-size: 0;
+  
+  li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 12px;
+    font-size: @mdl-font-size;
+    
+    a {
+      display: block;
+      position: relative;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      text-decoration: none;
+      color: @light-color;
+      .border-round-coner(50%);
+      
+      &:hover,
+      &:active {
+        background-color: @brand-color;
+      }
+      
+      i {
+        width: 20px;
+        height: 20px;
+        .zero-centered();
+      }
+    }
   }
 }

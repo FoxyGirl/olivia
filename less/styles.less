@@ -93,7 +93,7 @@ body {
 }
 
 /* Header Slaider */
-.header-slaider {
+.header-slider {
   margin-top: 170px;
   margin-bottom: 65px;
   
@@ -371,17 +371,46 @@ body {
   .linear-gradient(@angle; @bg-color-1; @bg-color-2);
 }
 
-.slaider {
+.slider {
     margin-top: 135px;
     margin-bottom: 40px;
   
     &-content {
+      position: relative;
       min-height: 270px;
     }
-
+    
+    .check-slide {
+      position: relative;
+      z-index: 1000;
+      
+      &:checked + .slider-item {
+        opacity: 1;
+        transition: opacity 0.95s;
+      }
+      
+      &:checked ~ label[for^="checkSlide_"] {
+        background-color: red;
+      }
+    }
+  
+    #checkSlide_1:checked ~ .slider-controls label[for="checkSlide_1"],
+    #checkSlide_2:checked ~ .slider-controls label[for="checkSlide_2"],
+    #checkSlide_3:checked ~ .slider-controls label[for="checkSlide_3"] {
+      & i {
+        background-color: red;
+      }
+      
+    }
+    /*
+    .generate-labels(3);
+*/
     &-item {
-      float: left;
-
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: opacity 0.7s;
       &-photo {
         float: left;
         width: 197px;
@@ -392,9 +421,7 @@ body {
         background: #fff url(../img/photo-lura_moore.jpg)  center no-repeat;
         background-size: 247px;
       }
-      
-      @cite-padding-left: 0;
-      
+    
       &-text {
         float: left;
         width: 70.588%;        
@@ -442,7 +469,7 @@ body {
           }
         }
       }
-    }
+    }    
     
     &-controls {
       .controls-block();
@@ -455,7 +482,7 @@ body {
         }
       }
     }
-  }
+}
 
 /* Support Section */
 .support {
@@ -637,7 +664,7 @@ form[name="subscribe"] {
   background: @bg-color-light url("../img/bg-blog_post.jpg") center no-repeat;
 }
 
-.blog-post-slaider {
+.blog-post-slider {
   margin-bottom: 75px;
   
   &-content {

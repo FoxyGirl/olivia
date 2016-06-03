@@ -112,3 +112,20 @@
     border-bottom-color: transparent;
     border-left-style: none;
 }
+/*
+.generate-labels(@n) when (@n > 0) {
+  @labelFor: checkSlide_@n;
+    
+  #checkSlide_@n:checked label[for=@labelFor] {
+    background-color: red;
+  }
+    .generate-labels(@n-1);
+}
+*/
+.generate-colors(@n) when (@n > 0) {
+    .monster-@{n} {
+        background-color: spin(@red, @n * 20);
+    }
+    
+    .generate-colors(@n - 1);
+}

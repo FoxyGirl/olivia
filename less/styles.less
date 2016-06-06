@@ -372,6 +372,8 @@ body {
 }
 
 .slider {
+    position: relative;
+    min-height: 270px;
     margin-top: 135px;
     margin-bottom: 40px;
   
@@ -381,24 +383,20 @@ body {
     }
     
     .check-slide {
-      position: relative;
-      z-index: 1000;
+      display: none;
       
       &:checked + .slider-item {
         opacity: 1;
         transition: opacity 0.95s;
       }
-      
-      &:checked ~ label[for^="checkSlide_"] {
-        background-color: red;
-      }
+
     }
   
     #checkSlide_1:checked ~ .slider-controls label[for="checkSlide_1"],
     #checkSlide_2:checked ~ .slider-controls label[for="checkSlide_2"],
     #checkSlide_3:checked ~ .slider-controls label[for="checkSlide_3"] {
       & i {
-        background-color: red;
+        background-color: @light-color;
       }
       
     }
@@ -472,6 +470,10 @@ body {
     }    
     
     &-controls {
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      right: 0;
       .controls-block();
 
       i {

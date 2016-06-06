@@ -402,7 +402,13 @@ body {
     }
     /*
     .generate-labels(3);
-*/
+*/  
+    &-controls {
+      i {
+        cursor: pointer;
+      }
+    }
+  
     &-item {
       position: absolute;
       left: 0;
@@ -840,6 +846,7 @@ form[name="contactInform"] {
 }
 
 .social-contacts {
+  margin-bottom: 40px;
   list-style-type: none;
   text-align: center;
   font-size: 0;
@@ -870,6 +877,33 @@ form[name="contactInform"] {
         height: 20px;
         .zero-centered();
       }
+    }
+  }
+}
+
+.copyright {
+  margin-bottom: 40px;
+  list-style-type: none;
+  text-align: center;
+  font-size: 0;
+  
+  li {
+    display: inline-block;
+    font-size: @base-font-size;
+    margin: 0 8px;
+  }
+  
+  a {
+    display: block;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: @light-color;
+    
+    &:hover,
+    &:active {
+      border-bottom: 2px solid @brand-color;
+      text-shadow: 1px 2px 5px darken(@brand-color, 20%),
+                   1px 2px 0 darken(@brand-color, 20%);
     }
   }
 }

@@ -59,19 +59,33 @@
     }
 
     
-    var countContr = Math.ceil(contentBlock.length / countLine); 
-    
-    if ( controls.length > countContr ) {
-      for (var i = countContr, length = controls.length; i < length; i++ ) {
-        controls[i].style.display = 'none';    
-      }
-    }
-    
-    //добавить недостающе контролы
+    var countContr = Math.ceil(contentBlock.length / countLine);
+    console.log('countContr = ' + countContr);
+        
+    //добавить недостающие контролы
     if ( controls.length < countContr ) {
       var controlNew = document.createElement('i');
       document.querySelector('.screenshorts-gallery-controls').appendChild(controlNew);
     }
+    
+    // показали нужные контролы
+    for (var i = 0; i < countContr; i++ ) {
+      controls[i].style.display = '';    
+    }
+
+    // спрятали лишние контролы
+    for (var i = countContr, length = controls.length; i < length; i++ ) {
+      contentBlock[i].style.display = 'none';    
+    }
+    
+//убра
+    /*
+    if ( controls.length > countContr ) {
+      for (var i = countContr, length = controls.length; i < length; i++ ) {
+        controls[i].style.display = 'none';    
+      }
+    }     
+    */
   }
   
   //кросс-браузерное получение стилей элемента (elem)

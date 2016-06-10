@@ -75,11 +75,11 @@
 
     // спрятали лишние контролы
     for (var i = countContr, length = controls.length; i < length; i++ ) {
-      contentBlock[i].style.display = 'none';    
+      controls[i].style.display = 'none';    
     }
     
-//убра
-    /*
+
+    /* //убра
     if ( controls.length > countContr ) {
       for (var i = countContr, length = controls.length; i < length; i++ ) {
         controls[i].style.display = 'none';    
@@ -87,6 +87,7 @@
     }     
     */
   }
+  
   
   //кросс-браузерное получение стилей элемента (elem)
   function getStyle(elem) {

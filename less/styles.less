@@ -93,7 +93,7 @@ body {
 }
 
 /* Header Slaider */
-.header-slaider {
+.header-slider {
   margin-top: 170px;
   margin-bottom: 65px;
   
@@ -322,14 +322,14 @@ body {
   font-size: 0;
   
   &-content {
-    margin: 0 -17px 38px -17px;
+    margin: 0 -17px 18px -17px;
     overflow: hidden;
   }
   
   &-item {
     display: inline-block;
     vertical-align: top;
-    margin: 0 17px;
+    margin: 0 17px 20px;
  
     a {
       display: block;
@@ -371,17 +371,50 @@ body {
   .linear-gradient(@angle; @bg-color-1; @bg-color-2);
 }
 
-.slaider {
+.slider {
+    position: relative;
+    min-height: 270px;
     margin-top: 135px;
     margin-bottom: 40px;
   
     &-content {
+      position: relative;
       min-height: 270px;
     }
+    
+    .check-slide {
+      display: none;
+      
+      &:checked + .slider-item {
+        opacity: 1;
+        transition: opacity 0.95s;
+      }
 
+    }
+  
+    #checkSlide_1:checked ~ .slider-controls label[for="checkSlide_1"],
+    #checkSlide_2:checked ~ .slider-controls label[for="checkSlide_2"],
+    #checkSlide_3:checked ~ .slider-controls label[for="checkSlide_3"] {
+      & i {
+        background-color: @light-color;
+      }
+      
+    }
+    /*
+    .generate-labels(3);
+*/  
+    &-controls {
+      i {
+        cursor: pointer;
+      }
+    }
+  
     &-item {
-      float: left;
-
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: opacity 0.7s;
       &-photo {
         float: left;
         width: 197px;
@@ -392,9 +425,7 @@ body {
         background: #fff url(../img/photo-lura_moore.jpg)  center no-repeat;
         background-size: 247px;
       }
-      
-      @cite-padding-left: 0;
-      
+    
       &-text {
         float: left;
         width: 70.588%;        
@@ -442,9 +473,13 @@ body {
           }
         }
       }
-    }
+    }    
     
     &-controls {
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      right: 0;
       .controls-block();
 
       i {
@@ -455,7 +490,7 @@ body {
         }
       }
     }
-  }
+}
 
 /* Support Section */
 .support {
@@ -637,7 +672,7 @@ form[name="subscribe"] {
   background: @bg-color-light url("../img/bg-blog_post.jpg") center no-repeat;
 }
 
-.blog-post-slaider {
+.blog-post-slider {
   margin-bottom: 75px;
   
   &-content {
@@ -811,6 +846,7 @@ form[name="contactInform"] {
 }
 
 .social-contacts {
+  margin-bottom: 40px;
   list-style-type: none;
   text-align: center;
   font-size: 0;
@@ -841,6 +877,33 @@ form[name="contactInform"] {
         height: 20px;
         .zero-centered();
       }
+    }
+  }
+}
+
+.copyright {
+  margin-bottom: 40px;
+  list-style-type: none;
+  text-align: center;
+  font-size: 0;
+  
+  li {
+    display: inline-block;
+    font-size: @base-font-size;
+    margin: 0 8px;
+  }
+  
+  a {
+    display: block;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: @light-color;
+    
+    &:hover,
+    &:active {
+      border-bottom: 2px solid @brand-color;
+      text-shadow: 1px 2px 5px darken(@brand-color, 20%),
+                   1px 2px 0 darken(@brand-color, 20%);
     }
   }
 }

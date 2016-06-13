@@ -65,6 +65,7 @@
     //добавить недостающие контролы
     if ( controls.length < countContr ) {
       var controlNew = document.createElement('i');
+      controlNew.setAttribute('data-toggler', (controls.length + 1));
       document.querySelector('.screenshorts-gallery-controls').appendChild(controlNew);
     }
     

@@ -1,6 +1,8 @@
 (function() {
   "use strict"
   
+  var countLine;
+  
   var gallery = document.getElementById('galleryCount');
   var contentBlock = gallery.getElementsByClassName('screenshorts-gallery-item');
 
@@ -22,7 +24,9 @@
   itemWidth += 2*itemMargin;
   console.log('itemWidth = ' + itemWidth );
   resizeSlider();
+  
   window.addEventListener('resize', resizeSlider);
+  controlBlock.addEventListener('click', changeSlider);  
   
   //перестроение слайдера
   function resizeSlider() {
@@ -37,22 +41,14 @@
     console.log('galleryWidth = ' + galleryWidth );
     galleryWidth += 2*itemMargin;
 
-    var countLine = Math.floor(galleryWidth/itemWidth);
+    countLine = Math.floor(galleryWidth/itemWidth);
     console.log('countLine = ' + countLine);
-/*
-    countLine = ( windowWidth < 1196 ) ? 3 : 4;
-    console.log('countLine = ' + countLine);
- */   
-    // показали нужные блоки
-    for (var i = 0; i < countLine; i++ ) {
-      contentBlock[i].style.display = '';    
-    }
-
-    // спрятали лишние блоки
-    for (var i = countLine, length = contentBlock.length; i < length; i++ ) {
-      contentBlock[i].style.display = 'none';    
-    }
-
+ 
+    var activeControl = 1;
+    controlBlock.querySelector('.active').classList.remove('active');
+    controls[activeControl - 1].classList.add('active');
+    
+    showItems(countLine, activeControl, contentBlock);
     
     var countContr = Math.ceil(contentBlock.length / countLine);
     console.log('countContr = ' + countContr);
@@ -76,16 +72,35 @@
     
   }
   
-  document.querySelector('.screenshorts-gallery-controls').addEventListener('click', changeSlider);
   
   function changeSlider(e) {
     var targetElem = e.target;
     if (targetElem.tagName != 'I')  
       {return; } else {
         console.log("!! " + targetElem.getAttribute('data-toggler'));
+        var activeControl = targetElem.getAttribute('data-toggler');
+        controlBlock.querySelector('.active').classList.remove('active');
+        controls[activeControl - 1].classList.add('active');
+        
+        showItems(countLine, activeControl, contentBlock);
       }
   }
   
+  function showItems(countLine, activeControl, contentBlock) {
+    var start = (activeControl - 1) * countLine;
+    var end = activeControl * countLine - 1;
+    console.log('start = ' + start);
+    console.log('end = ' + end);
+    // показали нужные блоки и спрятали лишние 
+    for (var i = 0, length = contentBlock.length; i < length; i++ ) {      
+      if  ( ( i >= start ) && ( i <= end ) )
+      {
+        contentBlock[i].style.display = ''; 
+      } else {
+        contentBlock[i].style.display = 'none'; 
+      }         
+    }
+  }  
   
   //кросс-браузерное получение стилей элемента (elem)
   function getStyle(elem) {

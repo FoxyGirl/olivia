@@ -140,6 +140,9 @@ body {
   background-color: #333333;
   border-radius: 25px;
 }
+.header-slider-download a:last-child {
+  margin-right: 0;
+}
 .header-slider-download a.app-store {
   background: #333333 url("../img/app-store.png") center no-repeat;
 }
@@ -589,6 +592,7 @@ form[name="subscribe"] input[type="email"] {
 /* Blog Post Section */
 .blog-post {
   background: #ffffff url("../img/bg-blog_post.jpg") center no-repeat;
+  background-size: cover;
 }
 .blog-post-slider {
   margin-bottom: 75px;
@@ -809,7 +813,9 @@ form[name="contactInform"] .btn-submit {
   margin: auto;
 }
 .copyright {
-  margin-bottom: 40px;
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
   list-style-type: none;
   text-align: center;
   font-size: 0;
@@ -817,13 +823,14 @@ form[name="contactInform"] .btn-submit {
 .copyright li {
   display: inline-block;
   font-size: 16px;
-  margin: 0 8px;
+  margin: 0 8px 10px;
 }
 .copyright a {
   display: block;
   padding-bottom: 5px;
   text-decoration: none;
   color: #ffffff;
+  border: 2px solid transparent;
 }
 .copyright a:hover,
 .copyright a:active {
@@ -863,7 +870,38 @@ form[name="contactInform"] .btn-submit {
     height: 330px;
   }
 }
+@media screen and (max-width: 1120px) {
+  .checkout h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  form[name="contactInform"] .btn-submit {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .support .support-item {
+    width: 100%;
+  }
+  .support .support-item:nth-child(odd),
+  .support .support-item:nth-child(even) {
+    float: none;
+  }
+}
 @media screen and (max-width: 850px) {
+  .blog-post-slider-item {
+    width: 100%;
+  }
+  .blog-post-slider-item:nth-child(odd),
+  .blog-post-slider-item:nth-child(even) {
+    float: none;
+  }
+  .copyright li {
+    font-size: 14px;
+  }
   .middle-header {
     font-size: 38px;
   }
@@ -913,9 +951,24 @@ form[name="contactInform"] .btn-submit {
     background-position: 0 -400px;
   }
 }
-@media screen and (max-width: 1120px) {
-  .checkout h2 {
-    margin-top: 40px;
-    margin-bottom: 15px;
+@media screen and (max-width: 690px) {
+  form[name="contactInform"] input {
+    width: 49%;
+  }
+  form[name="contactInform"] input:nth-child(even) {
+    margin-right: 0;
+  }
+  form[name="contactInform"] .btn-submit {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  form[name="subscribe"] input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  form[name="subscribe"] .btn-submit {
+    width: 100%;
   }
 }

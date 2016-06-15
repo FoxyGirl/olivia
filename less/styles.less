@@ -175,8 +175,8 @@ body {
   font-size: @large-font-size;
   font-weight: 400;
   text-align: center;
-  margin-top: 106px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 25px;
 }
 
 /* Features Section */
@@ -255,17 +255,12 @@ body {
 
 /* Checkout Section */
 .checkout {
-  position: relative;
-  min-height: 805px;
+  position: relative;  
   .linear-gradient(@angleInvert; @bg-color-1; @bg-color-2);
-  
-  h2 {
-    margin-bottom: 115px;
-  }
 }
 
 .checkout-text {
-  width: 50%;
+  width: 100%;
   
   h3 {
     position: relative;
@@ -273,7 +268,7 @@ body {
     font-weight: 600;
     padding-left: 70px;
     margin-bottom: 10px;
-    
+        
     .checkout-fa {
       position: absolute;
       font-size: 42px;
@@ -290,11 +285,12 @@ body {
 }
 
 .checkout-image {
+  display: none;
   position: absolute;
   bottom: 0;
   right: 50px;
   width: 45%;
-  max-height: 550px;
+  height: 550px;
   overflow: hidden;
   
   img {
@@ -622,6 +618,11 @@ body {
   .middle-header {
     margin-top: 83px;
     margin-bottom: 25px;
+    
+    @media screen and (max-width: 1120px) {
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
   }
   
   p {
@@ -907,3 +908,63 @@ form[name="contactInform"] {
     }
   }
 }
+
+/* Responsive */
+@media screen and (min-width: 1250px) {
+  
+  .middle-header {
+    margin-top: 106px;
+    margin-bottom: 20px;
+  }
+  
+  .checkout {
+    min-height: 805px;
+    
+    h2 {
+      margin-bottom: 115px;
+    }
+  }
+  
+}
+
+
+@media screen and (min-width: 1200px) {
+  .checkout-text {
+    width: 55%;
+  }
+  
+  .checkout-image {
+    display: block;
+    width: 40%;
+    height: 450px;
+  }
+}
+  
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  
+  .checkout-text {
+    width: 65%;
+  }
+  
+  .checkout-image {
+    display: block;
+    width: 30%;
+    height: 330px;
+  }
+    
+} 
+
+  
+@media screen and (max-width: 1120px) {
+  .checkout {
+    h2 {    
+      margin-top: 40px;
+      margin-bottom: 15px; 
+    }
+  }
+}
+  
+
+  
+   
+

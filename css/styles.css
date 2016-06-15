@@ -670,6 +670,7 @@ form[name="subscribe"] input[type="email"] {
 .blog-post-slider-text h4 a {
   text-decoration: none;
   color: #3b434d;
+  word-break: break-all;
 }
 .blog-post-slider-text h4 a:hover,
 .blog-post-slider-text h4 a:active {
@@ -777,7 +778,9 @@ form[name="contactInform"] .btn-submit {
   border-radius: 0;
 }
 .social-contacts {
+  margin: 0;
   margin-bottom: 40px;
+  padding: 0;
   list-style-type: none;
   text-align: center;
   font-size: 0;
@@ -892,18 +895,15 @@ form[name="contactInform"] .btn-submit {
   }
 }
 @media screen and (max-width: 850px) {
+  .middle-header {
+    font-size: 38px;
+  }
   .blog-post-slider-item {
     width: 100%;
   }
   .blog-post-slider-item:nth-child(odd),
   .blog-post-slider-item:nth-child(even) {
     float: none;
-  }
-  .copyright li {
-    font-size: 14px;
-  }
-  .middle-header {
-    font-size: 38px;
   }
   .header-slider-img {
     width: 50%;
@@ -959,6 +959,7 @@ form[name="contactInform"] .btn-submit {
     margin-right: 0;
   }
   form[name="contactInform"] .btn-submit {
+    width: 80%;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -970,5 +971,47 @@ form[name="contactInform"] .btn-submit {
   }
   form[name="subscribe"] .btn-submit {
     width: 100%;
+  }
+  .copyright li {
+    font-size: 12px;
+  }
+  .social-contacts {
+    margin-bottom: 20px;
+  }
+  .social-contacts li {
+    margin: 0 6px;
+  }
+  .social-contacts li a {
+    width: 40px;
+    height: 40px;
+  }
+  .main-footer p {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 360px) {
+  .blog-post-slider-date {
+    width: 65px;
+  }
+  .blog-post-slider-text {
+    padding-left: 80px;
+  }
+  .blog-post-slider-text a {
+    word-break: break-all;
+  }
+  form[name="contactInform"] {
+    margin-bottom: 50px;
+  }
+  form[name="contactInform"] input {
+    width: 100%;
+    margin-right: 0;
+    font-size: 14px;
+  }
+  form[name="contactInform"] textarea {
+    font-size: 14px;
+  }
+  .main-footer p {
+    font-size: 14px;
+    padding: 0;
   }
 }

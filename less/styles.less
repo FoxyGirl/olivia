@@ -747,6 +747,7 @@ form[name="subscribe"] {
       a {
         text-decoration: none;
         color: @text-color;
+        word-break: break-all;
         
         &:hover,
         &:active {
@@ -849,7 +850,9 @@ form[name="contactInform"] {
 }
 
 .social-contacts {
+  margin: 0;
   margin-bottom: 40px;
+  padding: 0;
   list-style-type: none;
   text-align: center;
   font-size: 0;
@@ -992,6 +995,11 @@ form[name="contactInform"] {
 }
 
 @media screen and (max-width: 850px) {
+  
+  .middle-header {
+    font-size: @big-font-size + 10;
+  }
+  
   .blog-post-slider-item {
     width: 100%;
 
@@ -999,16 +1007,6 @@ form[name="contactInform"] {
     &:nth-child(even) {
       float: none;
     }
-  }
-  
-  .copyright {  
-    li {
-      font-size: @small-font-size;
-    }
-  }
-
-  .middle-header {
-    font-size: @big-font-size + 10;
   }
   
   .header-slider-img {
@@ -1085,6 +1083,7 @@ form[name="contactInform"] {
     }
       
     .btn-submit {
+      width: 80%;
       padding-left: 20px;
       padding-right: 20px;
     }
@@ -1103,10 +1102,71 @@ form[name="contactInform"] {
       width: 100%;
     }
   }
+  
+  
+  .copyright {  
+    li {
+      font-size: @small-font-size - 2;
+    }
+  }
+  
+  .social-contacts {
+    margin-bottom: 20px;
+
+    li {
+      margin: 0 6px;
+      
+      a {
+        width: 40px;
+        height: 40px;
+      }
+      
+    }
+  }
+  
+  .main-footer {
+    p {
+      padding: 0;
+    }
+  }
 
 }
   
-
+@media screen and (max-width: 360px) {
+  
+  .blog-post-slider-date {
+    width: 65px;
+  }
+  
+  .blog-post-slider-text {
+    padding-left: 80px;
+    
+    a {
+      word-break: break-all;
+    }
+  }
+    
+  form[name="contactInform"] {
+    margin-bottom: 50px;
+    
+    input {
+      width: 100%;
+      margin-right: 0;
+      font-size: @small-font-size;
+    }
+    
+    textarea {
+      font-size: @small-font-size;
+    }
+  }
+  
+  .main-footer {
+    p {
+      font-size: @small-font-size;
+      padding: 0;
+    }
+  }
+}
   
    
 

@@ -102,10 +102,9 @@ body {
 }
 .header-slider-item {
   position: relative;
+  left: 0px;
 }
 .header-slider-img {
-  position: relative;
-  left: 0px;
   float: left;
   margin-right: 90px;
 }
@@ -137,6 +136,7 @@ body {
   width: 200px;
   height: 72px;
   margin-right: 34px;
+  margin-bottom: 15px;
   background-color: #333333;
   border-radius: 25px;
 }
@@ -200,9 +200,6 @@ body {
 }
 .feauture-item a .item-listen {
   background-position: 0 -260px;
-}
-.feauture-item a .item-gallery {
-  background-position: 0 0;
 }
 .feauture-item a .item-gallery {
   background-position: 0 -520px;
@@ -834,18 +831,6 @@ form[name="contactInform"] .btn-submit {
   text-shadow: 1px 2px 5px #641982, 1px 2px 0 #641982;
 }
 /* Responsive */
-@media screen and (min-width: 1250px) {
-  .middle-header {
-    margin-top: 106px;
-    margin-bottom: 20px;
-  }
-  .checkout {
-    min-height: 805px;
-  }
-  .checkout h2 {
-    margin-bottom: 115px;
-  }
-}
 @media screen and (min-width: 1200px) {
   .checkout-text {
     width: 55%;
@@ -856,6 +841,18 @@ form[name="contactInform"] .btn-submit {
     height: 450px;
   }
 }
+@media screen and (min-width: 1250px) {
+  .middle-header {
+    margin-top: 106px;
+    margin-bottom: 25px;
+  }
+  .checkout {
+    min-height: 805px;
+  }
+  .checkout h2 {
+    margin-bottom: 115px;
+  }
+}
 @media screen and (min-width: 900px) and (max-width: 1199px) {
   .checkout-text {
     width: 65%;
@@ -864,6 +861,56 @@ form[name="contactInform"] .btn-submit {
     display: block;
     width: 30%;
     height: 330px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .middle-header {
+    font-size: 38px;
+  }
+  .header-slider-img {
+    width: 50%;
+    margin-right: 20px;
+  }
+  .header-slider-img img {
+    width: 100%;
+    height: auto;
+  }
+  .header-slider-content h2 {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  .feauture-item {
+    width: 100%;
+    float: none;
+    margin-bottom: 40px;
+  }
+  .feauture-item a .feauture-img {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+  }
+  .feauture-item a .item-listen {
+    background-position: 0 -160px;
+  }
+  .feauture-item a .item-gallery {
+    background-position: 0 -320px;
+  }
+  .feauture-item a:hover h4,
+  .feauture-item a:active h4 {
+    color: #a62ad7;
+  }
+  .feauture-item a:hover .item-full,
+  .feauture-item a:active .item-full {
+    background-position: 0 -80px;
+  }
+  .feauture-item a:hover .item-listen,
+  .feauture-item a:active .item-listen {
+    background-position: 0 -240px;
+  }
+  .feauture-item a:hover .item-gallery,
+  .feauture-item a:active .item-gallery {
+    background-position: 0 -400px;
   }
 }
 @media screen and (max-width: 1120px) {

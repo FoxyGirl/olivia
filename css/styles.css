@@ -990,8 +990,10 @@ form[name="contactInform"] .btn-submit {
   }
 }
 @media screen and (max-width: 555px) {
-  .support-content {
-    margin-bottom: 40px;
+  .support-content,
+  form[name="subscribe"],
+  .blog-post-slider-controls {
+    margin-bottom: 45px;
   }
   .support .support-item-photo {
     width: 128px;

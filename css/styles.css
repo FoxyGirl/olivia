@@ -368,8 +368,8 @@ body {
   background-size: 247px;
 }
 .slider-item-text {
-  float: left;
-  width: 70.588%;
+  padding-left: 300px;
+  padding-right: 60px;
 }
 .slider-item-text cite {
   font-style: normal;
@@ -878,6 +878,9 @@ form[name="contactInform"] .btn-submit {
     margin-top: 40px;
     margin-bottom: 15px;
   }
+  .slider-item-text {
+    padding-right: 10px;
+  }
 }
 @media screen and (max-width: 1080px) {
   form[name="contactInform"] .btn-submit {
@@ -895,6 +898,17 @@ form[name="contactInform"] .btn-submit {
   }
 }
 @media screen and (max-width: 850px) {
+  .slider {
+    min-height: 300px;
+  }
+  .slider-item-text {
+    padding-left: 220px;
+  }
+  .slider-item-photo {
+    width: 150px;
+    height: 150px;
+    margin-right: 35px;
+  }
   .middle-header {
     font-size: 38px;
   }
@@ -952,6 +966,10 @@ form[name="contactInform"] .btn-submit {
   }
 }
 @media screen and (max-width: 690px) {
+  .slider {
+    min-height: 350px;
+    margin-top: 50px;
+  }
   form[name="contactInform"] input {
     width: 49%;
   }
@@ -990,6 +1008,26 @@ form[name="contactInform"] .btn-submit {
   }
 }
 @media screen and (max-width: 555px) {
+  .slider {
+    min-height: 350px;
+    margin-top: 30px;
+  }
+  .slider-item-text {
+    padding-left: 0;
+    padding-right: 15px;
+  }
+  .slider-item-photo {
+    width: 100px;
+    height: 100px;
+    margin-right: 25px;
+    margin-top: 15px;
+  }
+  .slider-item-blockquote:before {
+    left: 105px;
+  }
+  .slider-item-blockquote .text-end:after {
+    right: -30px;
+  }
   .support-content,
   form[name="subscribe"],
   .blog-post-slider-controls {

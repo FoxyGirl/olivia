@@ -1008,6 +1008,12 @@ form[name="contactInform"] .btn-submit {
   }
 }
 @media screen and (max-width: 555px) {
+  .feauture-item:last-child {
+    margin-bottom: 0;
+  }
+  .features p {
+    font-size: 14px;
+  }
   .slider {
     min-height: 350px;
     margin-top: 30px;
@@ -1028,10 +1034,14 @@ form[name="contactInform"] .btn-submit {
   .slider-item-blockquote .text-end:after {
     right: -30px;
   }
+  .features-all,
   .support-content,
   form[name="subscribe"],
   .blog-post-slider-controls {
     margin-bottom: 45px;
+  }
+  .features-all {
+    margin-top: 40px;
   }
   .support .support-item-photo {
     width: 128px;

@@ -108,7 +108,8 @@ body {
     margin-right: 90px;
   }
   
-  &-content {    
+  &-content { 
+    padding-left: 560px;
     color: @light-color;
     border-top: 1px solid transparent;
     
@@ -986,7 +987,33 @@ form[name="contactInform"] {
   }
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1060px) {
+  
+  .header-slider {
+    &-content {     
+      padding-left: 430px;
+      
+      h2 {
+        margin-top: 30px;
+        font-size: @big-font-size + 14;
+      }
+
+      p {
+        padding-right: 0;
+      }
+    }
+    
+    &-img {
+      margin-right: 50px;
+      
+      img {
+        width: 380px;
+        height: auto;
+      }
+    }
+  }
+  
+  
   .support {
     .support-item {
       width: 100%;
@@ -1000,6 +1027,49 @@ form[name="contactInform"] {
 }
 
 @media screen and (max-width: 850px) {
+  
+  .header-slider {
+    &-content {     
+      padding-left: 0;
+      
+      h2 {
+        font-size: @big-font-size + 2;
+        margin-top: 20px;
+      }
+      
+      p {
+        margin-bottom: 20px;
+      }
+    }
+  
+    &-img {
+      width: 50%;
+      margin-right: 20px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    
+    &-download {
+      h5 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      
+      a {
+        width: 152px;
+        height: 52px;
+
+        &.app-store,
+        &.android-market {
+          background-size: 80%
+        }
+      }
+    }  
+  }
+  
   
   .slider {
     min-height: 300px;
@@ -1028,22 +1098,7 @@ form[name="contactInform"] {
     }
   }
   
-  .header-slider-img {
-    width: 50%;
-    margin-right: 20px;
-    
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
   
-  .header-slider-content {
-    h2 {
-      font-size: @big-font-size + 2;
-      margin-top: 20px;
-    }
-  }
   
   .feauture-item {
     width: 100%;
@@ -1161,6 +1216,7 @@ form[name="contactInform"] {
 
 @media screen and (max-width: 555px) {
   
+
   .feauture-item:last-child {
     margin-bottom: 0;
   }

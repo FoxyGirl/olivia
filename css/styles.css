@@ -109,6 +109,7 @@ body {
   margin-right: 90px;
 }
 .header-slider-content {
+  padding-left: 560px;
   color: #ffffff;
   border-top: 1px solid transparent;
 }
@@ -888,7 +889,24 @@ form[name="contactInform"] .btn-submit {
     padding-right: 60px;
   }
 }
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1060px) {
+  .header-slider-content {
+    padding-left: 430px;
+  }
+  .header-slider-content h2 {
+    margin-top: 30px;
+    font-size: 42px;
+  }
+  .header-slider-content p {
+    padding-right: 0;
+  }
+  .header-slider-img {
+    margin-right: 50px;
+  }
+  .header-slider-img img {
+    width: 380px;
+    height: auto;
+  }
   .support .support-item {
     width: 100%;
   }
@@ -898,6 +916,36 @@ form[name="contactInform"] .btn-submit {
   }
 }
 @media screen and (max-width: 850px) {
+  .header-slider-content {
+    padding-left: 0;
+  }
+  .header-slider-content h2 {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  .header-slider-content p {
+    margin-bottom: 20px;
+  }
+  .header-slider-img {
+    width: 50%;
+    margin-right: 20px;
+  }
+  .header-slider-img img {
+    width: 100%;
+    height: auto;
+  }
+  .header-slider-download h5 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .header-slider-download a {
+    width: 152px;
+    height: 52px;
+  }
+  .header-slider-download a.app-store,
+  .header-slider-download a.android-market {
+    background-size: 80%;
+  }
   .slider {
     min-height: 300px;
   }
@@ -918,18 +966,6 @@ form[name="contactInform"] .btn-submit {
   .blog-post-slider-item:nth-child(odd),
   .blog-post-slider-item:nth-child(even) {
     float: none;
-  }
-  .header-slider-img {
-    width: 50%;
-    margin-right: 20px;
-  }
-  .header-slider-img img {
-    width: 100%;
-    height: auto;
-  }
-  .header-slider-content h2 {
-    font-size: 30px;
-    margin-top: 20px;
   }
   .feauture-item {
     width: 100%;

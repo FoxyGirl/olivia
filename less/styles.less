@@ -1244,19 +1244,20 @@ form[name="contactInform"] {
   }
   
   input:checked ~ .main-nav {
-    display: block;
-    position: absolute;
-    right: 0;
     left: 0;
-    top: 100%;
+    transition: left 0.7s;
   }
   
   .main-nav {
-    display: none;
-    float: none;
-    text-align: left;
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 100%;
+    top: 100%;
+    float: none;    
     margin: 0;
     border-bottom: 1px solid @bg-color-light;
+    transition: left 0.7s;
     
     ul {
       margin: 0;

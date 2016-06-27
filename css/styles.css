@@ -44,6 +44,22 @@ body {
   max-width: 180px;
   margin-top: 50px;
 }
+/* Main navigation */
+.hidden {
+  display: none;
+}
+.menu-toggler {
+  display: none;
+}
+.menu-toggler:after {
+  content: '\f0c9';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5px;
+  font-family: FontAwesome;
+  font-size: 30px;
+}
 .main-nav {
   float: right;
   margin-top: 45px;
@@ -1000,6 +1016,120 @@ form[name="contactInform"] .btn-submit {
   .feauture-item a:active .item-gallery {
     background-position: 0 -400px;
   }
+}
+@media screen and (max-width: 800px) {
+  .main-header .header-logo {
+    margin-top: 20px;
+  }
+  .main-nav {
+    float: right;
+    margin-top: 25px;
+  }
+  .main-nav ul {
+    font-size: 16px;
+  }
+  .main-nav ul li a:hover,
+  .main-nav ul li:active {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+  .header-slider {
+    margin-top: 120px;
+  }
+}
+@media screen and (max-width: 745px) {
+  body {
+    padding-top: 50px;
+  }
+  .fixed-header {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #a62ad7;
+    height: 50px;
+  }
+  .main-header .header-logo {
+    width: 85px;
+    margin-left: 20px;
+    margin-top: 8px;
+  }
+  .main-header .header-logo img {
+    width: 100%;
+    height: auto;
+  }
+  .menu-toggler {
+    display: block;
+    position: relative;
+    float: right;
+    width: 50px;
+    height: 40px;
+    margin-top: 8px;
+    cursor: pointer;
+  }
+  input:checked ~ .menu-toggler:after {
+    content: "\f00d";
+    margin-top: -2px;
+  }
+  input:checked ~ .main-nav {
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 100%;
+  }
+  .main-nav {
+    display: none;
+    float: none;
+    text-align: left;
+    margin: 0;
+    border-bottom: 1px solid #ffffff;
+  }
+  .main-nav ul {
+    margin: 0;
+    padding: 0;
+  }
+  .main-nav ul:hover li.active {
+    background-color: #907bea;
+    border-radius: 0;
+  }
+  .main-nav ul:hover li.active:hover {
+    border-radius: 0;
+  }
+  .main-nav ul:hover li a:hover,
+  .main-nav ul:hover li a:active {
+    border-radius: 0;
+  }
+  .main-nav ul li {
+    display: block;
+  }
+  .main-nav ul li.active {
+    border-radius: 0;
+    border-top: 1px solid #ffffff;
+  }
+  .main-nav ul li a {
+    background-color: #907bea;
+    border-radius: 0;
+    border-top: 1px solid #ffffff;
+  }
+  .main-nav ul li a:hover,
+  .main-nav ul li a:active {
+    border-radius: 0;
+  }
+  /*
+  .main-nav {
+    display: none;
+    float: none;
+    text-align: left;
+    
+    li {
+      display: block;
+      float: none;
+      margin-right: 0;
+    }
+  }
+  */
 }
 @media screen and (max-width: 690px) {
   .slider {

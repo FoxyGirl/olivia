@@ -21,6 +21,9 @@ body {
   display: table;
   clear: both;
 }
+.ws-nowrap {
+  white-space: nowrap;
+}
 .main-header,
 .main-footer,
 .main-content {
@@ -611,6 +614,9 @@ form[name="subscribe"] input[type="email"] {
   background: #ffffff url("../img/bg-blog_post.jpg") center no-repeat;
   background-size: cover;
 }
+-link a {
+  word-break: break-all;
+}
 .blog-post-slider {
   margin-bottom: 75px;
 }
@@ -687,7 +693,6 @@ form[name="subscribe"] input[type="email"] {
 .blog-post-slider-text h4 a {
   text-decoration: none;
   color: #3b434d;
-  word-break: break-all;
 }
 .blog-post-slider-text h4 a:hover,
 .blog-post-slider-text h4 a:active {

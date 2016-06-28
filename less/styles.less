@@ -14,6 +14,10 @@ body {
   clear: both;
 }
 
+.ws-nowrap {
+  white-space: nowrap;
+}
+
 .main-header,
 .main-footer,
 .main-content {
@@ -698,6 +702,12 @@ form[name="subscribe"] {
   background-size: cover;
 }
 
+&-link {
+  a {
+    word-break: break-all;
+  }
+}
+
 .blog-post-slider {
   margin-bottom: 75px;
   
@@ -769,8 +779,7 @@ form[name="subscribe"] {
       
       a {
         text-decoration: none;
-        color: @text-color;
-        word-break: break-all;
+        color: @text-color;        
         
         &:hover,
         &:active {

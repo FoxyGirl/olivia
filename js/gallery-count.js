@@ -11,18 +11,6 @@
   var controls = controlBlock.getElementsByTagName('i');
   console.log('controls = ' + controls.length);
     
-  var item = contentBlock[0];  
-  //ширина 1-го элемента
-  var itemWidth = item.clientWidth;
-  console.log('itemWidth = ' + itemWidth );  //??  
- 
-  var itemСomputedStyle = getStyle(contentBlock[0]);
-  var itemMargin = parseInt(itemСomputedStyle.marginLeft, 10);
-  console.log('itemMargin = ' + itemMargin );
-  
-  //ширина всего блока 1-го элемента
-  itemWidth += 2*itemMargin;
-  console.log('itemWidth = ' + itemWidth );
   resizeSlider();
   
   window.addEventListener('resize', resizeSlider);
@@ -31,6 +19,22 @@
   //перестроение слайдера
   function resizeSlider() {
     console.log('!!!!!!!!');
+    
+    var contentBlock = gallery.getElementsByClassName('screenshorts-gallery-item');
+
+    var item = contentBlock[0]; 
+    
+    //ширина 1-го элемента
+    var itemWidth = item.clientWidth;
+    console.log('itemWidth = ' + itemWidth );  //  
+
+    var itemСomputedStyle = getStyle(contentBlock[0]);
+    var itemMargin = parseInt(itemСomputedStyle.marginLeft, 10);
+    console.log('itemMargin = ' + itemMargin );
+
+    //ширина всего блока 1-го элемента
+    itemWidth += 2*itemMargin;
+    console.log('itemWidth = ' + itemWidth );
     
     //ширина доступного окна 
     var windowWidth = document.documentElement.clientWidth;

@@ -22,9 +22,20 @@
     //ширина доступного окна 
     var windowWidth = document.documentElement.clientWidth;
     console.log('windowWidth = ' + windowWidth);
+
+    countNews = ( windowWidth > 850 ) ? 6 : 3;    
     
-    countNews = ( windowWidth > 850 ) ? 6 : 3;
- 
+    //высота блока
+    var itemComputedStyle = getStyle(contentBlock[0]);
+    var itemHeight = parseInt(itemComputedStyle.height, 10);
+    var itemMarginB = parseInt(itemComputedStyle.marginBottom, 10);
+    console.log('itemHeight = ' + itemHeight);
+    console.log('countNews = ' + countNews);
+
+    var galleryHeight = 3 * (itemHeight + itemMarginB);
+    console.log('galleryHeight = ' + galleryHeight);
+    gallery.style.height =  galleryHeight + 'px';
+     
     var activeControl = 1;
     controlBlock.querySelector('.active').classList.remove('active');
     controls[activeControl - 1].classList.add('active');
@@ -80,6 +91,11 @@
         contentBlock[i].style.display = 'none'; 
       }         
     }
-  }  
+  }
+  
+  //кросс-браузерное получение стилей элемента (elem)
+  function getStyle(elem) {
+    return window.getComputedStyle ? getComputedStyle(elem, "") : elem.currentStyle;
+  }
   
 })();

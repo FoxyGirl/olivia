@@ -1,5 +1,5 @@
 (function () {
-  "use stict";
+  "use strict";
   
   var countNews;
   var gallery = document.getElementById('galleryNews');

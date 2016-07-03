@@ -74,22 +74,22 @@ body {
 }
 .main-nav ul:hover li.active {
   background-color: transparent;
-  border-radius: 25px;
+  border-radius: 21px;
   cursor: pointer;
-  padding: 11px 20px 8px;
+  padding: 11px 23px 6px;
 }
 .main-nav ul:hover li.active:hover {
   background-color: #a62ad7;
-  border-radius: 25px;
+  border-radius: 21px;
   cursor: pointer;
-  padding: 11px 20px 8px;
+  padding: 11px 23px 6px;
 }
 .main-nav ul:hover li a:hover,
 .main-nav ul:hover li:active {
   background-color: #a62ad7;
-  border-radius: 25px;
+  border-radius: 21px;
   cursor: pointer;
-  padding: 11px 20px 8px;
+  padding: 11px 23px 6px;
 }
 .main-nav ul li {
   display: inline-block;
@@ -98,16 +98,16 @@ body {
 }
 .main-nav ul li.active {
   background-color: #a62ad7;
-  border-radius: 25px;
+  border-radius: 21px;
   cursor: pointer;
-  padding: 11px 20px 8px;
+  padding: 11px 23px 6px;
 }
 .main-nav ul li a {
   display: block;
   background-color: transparent;
-  border-radius: 25px;
+  border-radius: 21px;
   cursor: pointer;
-  padding: 11px 20px 8px;
+  padding: 11px 23px 6px;
   color: #ffffff;
   text-decoration: none;
 }
@@ -117,7 +117,7 @@ body {
 /* Header Slaider */
 .header-slider {
   margin-top: 170px;
-  margin-bottom: 65px;
+  margin-bottom: 85px;
 }
 .header-slider-item {
   position: relative;
@@ -125,7 +125,7 @@ body {
 }
 .header-slider-img {
   float: left;
-  margin-right: 90px;
+  margin-right: 92px;
 }
 .header-slider-content {
   padding-left: 560px;
@@ -135,19 +135,21 @@ body {
 .header-slider-content h2 {
   font-size: 60px;
   font-weight: 700;
-  margin-top: 60px;
-  margin-bottom: 35px;
+  margin-top: 59px;
+  margin-bottom: 25px;
+  line-height: 1.2;
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
 }
 .header-slider-content p {
   font-size: 16px;
   line-height: 1.9;
-  padding-right: 95px;
-  margin-bottom: 45px;
+  padding-right: 84px;
+  margin-bottom: 40px;
 }
 .header-slider-download h5 {
+  margin-top: 0;
   margin-bottom: 27px;
-  font-size: 28px;
+  font-size: 29px;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -158,7 +160,7 @@ body {
   margin-right: 34px;
   margin-bottom: 15px;
   background-color: #333333;
-  border-radius: 25px;
+  border-radius: 15px;
 }
 .header-slider-download a:last-child {
   margin-right: 0;
@@ -191,12 +193,15 @@ body {
   background: #f7e5ff url("../img/bg-features.jpg") center no-repeat;
   background-size: cover;
 }
+.features h2 {
+  font-weight: 600;
+}
 .features p {
   text-align: center;
-  padding: 0 50px;
+  padding: 0 28px;
 }
 .features-all {
-  margin-top: 110px;
+  margin-top: 117px;
   margin-bottom: 130px;
 }
 .feauture-item {
@@ -210,7 +215,7 @@ body {
 }
 .feauture-item a h4 {
   margin-top: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 28px;
   color: #3b434d;
   font-weight: 600;
   font-size: 30px;
@@ -248,6 +253,9 @@ body {
   position: relative;
   background-image: linear-gradient(90deg, #7395f2, #af60e2);
 }
+.checkout .middle-header {
+  margin-top: 74px;
+}
 .checkout-text {
   width: 100%;
 }
@@ -268,12 +276,13 @@ body {
   font-size: 16px;
   padding-left: 70px;
   margin-bottom: 45px;
+  line-height: 1.5;
 }
 .checkout-image {
   display: none;
   position: absolute;
   bottom: 0;
-  right: 50px;
+  right: 162px;
   width: 45%;
   height: 550px;
   overflow: hidden;
@@ -286,12 +295,12 @@ body {
   background: #ffffff url("../img/bg-screenshorts.jpg") center no-repeat;
   background-size: cover;
 }
-.screenshots h3 {
-  margin-top: 110px;
+.screenshots .middle-header {
+  margin-top: 102px;
   margin-bottom: 93px;
   font-weight: 400;
   text-align: center;
-  font-size: 28px;
+  font-size: 48px;
 }
 .screenshorts-gallery {
   max-width: 1230px;
@@ -299,7 +308,7 @@ body {
   font-size: 0;
 }
 .screenshorts-gallery-content {
-  margin: 0 -17px 18px -17px;
+  margin: 0 -17px 16px -17px;
   overflow: hidden;
 }
 .screenshorts-gallery-item {
@@ -344,7 +353,7 @@ body {
 }
 .slider {
   position: relative;
-  min-height: 270px;
+  min-height: 279px;
   margin-top: 135px;
   margin-bottom: 40px;
   /*
@@ -449,11 +458,21 @@ body {
   background: #ffffff;
 }
 /* Support Section */
+.support .middle-header {
+  font-weight: 600;
+  margin-top: 125px;
+  margin-bottom: 31px;
+}
 .support address {
   margin-bottom: 100px;
   text-align: center;
   font-size: 27px;
   font-style: normal;
+}
+.support address span {
+  text-transform: uppercase;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 .support address a {
   text-decoration: none;
@@ -464,7 +483,7 @@ body {
   color: #a62ad7;
 }
 .support-content {
-  margin-bottom: 85px;
+  margin-bottom: 90px;
 }
 .support .support-item-photo {
   position: relative;
@@ -511,10 +530,13 @@ body {
   float: left;
 }
 .support .support-name {
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 0;
   font-size: 18px;
   font-weight: 600;
+}
+.support .support-name span {
+  text-transform: uppercase;
 }
 .support .support-position {
   margin-top: 0;
@@ -557,7 +579,7 @@ body {
 }
 .newsletter .middle-header {
   margin-top: 83px;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 }
 @media screen and (max-width: 1120px) {
   .newsletter .middle-header {
@@ -567,15 +589,17 @@ body {
 }
 .newsletter p {
   text-align: center;
+  padding: 0 100px;
+  line-height: 1.9;
 }
 form[name="subscribe"] {
-  margin-top: 50px;
+  margin-top: 45px;
   margin-bottom: 135px;
   text-align: center;
 }
 form[name="subscribe"] input {
-  width: 28.72%;
-  padding: 18px 18px 18px 60px;
+  width: 28.0%;
+  padding: 15px 18px 15px 60px;
   margin-right: 12px;
   outline: none;
   border: 2px solid #ffffff;
@@ -598,7 +622,7 @@ form[name="subscribe"] input[type="email"] {
   background-position: -34px -807px;
 }
 .btn {
-  padding: 18px 35px;
+  padding: 15px 35px;
   border: 2px solid #a62ad7;
   border-radius: 4px;
   text-transform: uppercase;
@@ -614,6 +638,10 @@ form[name="subscribe"] input[type="email"] {
   background: #ffffff url("../img/bg-blog_post.jpg") center no-repeat;
   background-size: cover;
 }
+.blog-post .middle-header {
+  font-weight: 600;
+  margin-bottom: 95px;
+}
 -link a {
   word-break: break-all;
 }
@@ -621,11 +649,11 @@ form[name="subscribe"] input[type="email"] {
   margin-bottom: 75px;
 }
 .blog-post-slider-content {
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 }
 .blog-post-slider-item {
   width: 44.35%;
-  margin-bottom: 53px;
+  margin-bottom: 60px;
 }
 .blog-post-slider-item:nth-child(odd) {
   float: left;
@@ -672,6 +700,8 @@ form[name="subscribe"] input[type="email"] {
 }
 .blog-post-slider-date .date-number {
   display: block;
+  margin-top: 2px;
+  margin-bottom: -4px;
   font-weight: 800;
   font-size: 36px;
 }
@@ -684,10 +714,11 @@ form[name="subscribe"] input[type="email"] {
   padding-left: 100px;
 }
 .blog-post-slider-text h4 {
-  margin-top: 0;
+  margin-top: -4px;
   margin-bottom: 4px;
   font-weight: 600;
   font-size: 18px;
+  text-transform: uppercase;
   color: #3b434d;
 }
 .blog-post-slider-text h4 a {
@@ -737,14 +768,21 @@ form[name="subscribe"] input[type="email"] {
 .main-footer p {
   line-height: 1.9;
   margin: 0;
-  margin-bottom: 60px;
+  margin-bottom: 49px;
   text-align: center;
-  padding: 0 50px;
+  padding: 0 60px;
 }
 /* Get in Touch Section */
+.touch .middle-header {
+  margin-bottom: 12px;
+}
+.touch p {
+  padding: 0 90px;
+}
 form[name="contactInform"] {
   position: relative;
-  margin-bottom: 70px;
+  margin-bottom: 65px;
+  padding: 0 52px;
 }
 form[name="contactInform"] input {
   display: block;
@@ -753,7 +791,7 @@ form[name="contactInform"] input {
   width: 23.5%;
   margin-right: 2%;
   margin-bottom: 17px;
-  padding: 15px;
+  padding: 11px 15px;
   color: #3b434d;
   outline: none;
   border: none;
@@ -792,11 +830,13 @@ form[name="contactInform"] .btn-submit {
   position: absolute;
   box-sizing: border-box;
   display: inline-block;
-  bottom: -25px;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
-  padding-left: 160px;
-  padding-right: 160px;
+  padding: 11px 175px;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
   border-radius: 0;
 }
 .social-contacts {
@@ -810,14 +850,14 @@ form[name="contactInform"] .btn-submit {
 .social-contacts li {
   display: inline-block;
   vertical-align: top;
-  margin: 0 12px;
+  margin: 0 16px;
   font-size: 20px;
 }
 .social-contacts li a {
   display: block;
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 49px;
+  height: 49px;
   text-align: center;
   text-decoration: none;
   color: #ffffff;
@@ -865,18 +905,18 @@ form[name="contactInform"] .btn-submit {
 /* Responsive */
 @media screen and (min-width: 1200px) {
   .checkout-text {
-    width: 55%;
+    width: 48%;
   }
   .checkout-image {
     display: block;
     width: 40%;
-    height: 450px;
+    height: 550px;
   }
 }
 @media screen and (min-width: 1250px) {
   .middle-header {
-    margin-top: 106px;
-    margin-bottom: 25px;
+    margin-top: 98px;
+    margin-bottom: 15px;
   }
   .checkout {
     min-height: 805px;

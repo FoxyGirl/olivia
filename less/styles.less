@@ -95,7 +95,7 @@ body {
     }
     
     li {
-      display: inline-block;
+      display: inline-block;      
       text-transform: uppercase;
       list-style: none;
       
@@ -120,7 +120,7 @@ body {
 /* Header Slaider */
 .header-slider {
   margin-top: 170px;
-  margin-bottom: 65px;
+  margin-bottom: 85px;
   
   &-item {
     position: relative;
@@ -130,7 +130,7 @@ body {
   &-img {
     
     float: left;
-    margin-right: 90px;
+    margin-right: 92px;
   }
   
   &-content { 
@@ -141,23 +141,25 @@ body {
     h2 {
       font-size: 60px;
       font-weight: 700;
-      margin-top: 60px;
-      margin-bottom: 35px;
+      margin-top: 59px;
+      margin-bottom: 25px;
+      line-height: 1.2;
       text-shadow: 2px 2px 0 rgba(0,0,0,0.35);
     }
     
     p {
       font-size: @base-font-size;
       line-height: @line-height;
-      padding-right: 95px;
-      margin-bottom: 45px;
+      padding-right: 84px;
+      margin-bottom: 40px;
     }
   }
   
   &-download {
     h5 {
+      margin-top: 0;
       margin-bottom: 27px;
-      font-size: @big-font-size;
+      font-size: @big-font-size + 1;
       font-weight: 400;
       text-transform: uppercase;
     }
@@ -169,7 +171,7 @@ body {
       margin-right: 34px;
       margin-bottom: 15px;
       background-color: @dark-gray;
-      .border-round-coner();
+      .border-round-coner(15px);
       
       &:last-child {
         margin-right: 0;
@@ -215,14 +217,18 @@ body {
   background: #f7e5ff url("../img/bg-features.jpg") center no-repeat;
   background-size: cover;
   
+  h2 {
+    font-weight: 600;
+  }
+  
   p {
     text-align: center;
-    padding: 0 50px;
+    padding: 0 28px;
   }
 }
 
 .features-all {
-  margin-top: 110px;
+  margin-top: 117px;
   margin-bottom: 130px;
 }
 
@@ -238,7 +244,7 @@ body {
     
     h4{
       margin-top: 10px;
-      margin-bottom: 15px;
+      margin-bottom: 28px;
       color: @text-color;
       font-weight: 600;
       font-size: floor(@large-font-size/2);
@@ -284,6 +290,10 @@ body {
 .checkout {
   position: relative;  
   .linear-gradient(@angleInvert; @bg-color-1; @bg-color-2);
+  
+  .middle-header {
+    margin-top: 74px;
+  }
 }
 
 .checkout-text {
@@ -308,6 +318,7 @@ body {
     font-size: @base-font-size;
     padding-left: 70px;
     margin-bottom: 45px;
+    line-height: 1.5;
   }
 }
 
@@ -315,7 +326,7 @@ body {
   display: none;
   position: absolute;
   bottom: 0;
-  right: 50px;
+  right: 162px;
   width: 45%;
   height: 550px;
   overflow: hidden;
@@ -330,12 +341,12 @@ body {
   background: @bg-color-light url("../img/bg-screenshorts.jpg") center no-repeat;
   background-size: cover; 
   
-  h3 {
-    margin-top: 110px;
+  .middle-header {
+    margin-top: 102px;
     margin-bottom: 93px;
     font-weight: 400;
     text-align: center;
-    font-size: @big-font-size;
+    font-size: 48px;
   }
 }
 
@@ -345,7 +356,7 @@ body {
   font-size: 0;
   
   &-content {
-    margin: 0 -17px 18px -17px;
+    margin: 0 -17px 16px -17px;
     overflow: hidden;
   }
   
@@ -396,7 +407,7 @@ body {
 
 .slider {
     position: relative;
-    min-height: 270px;
+    min-height: 279px;
     margin-top: 135px;
     margin-bottom: 40px;
   
@@ -518,11 +529,23 @@ body {
 
 /* Support Section */
 .support {
+  .middle-header {
+    font-weight: 600;
+    margin-top: 125px;
+    margin-bottom: 31px;
+  }
+  
   address {
     margin-bottom: 100px;
     text-align: center;
     font-size: @base-font-size + 11;
     font-style: normal;
+    
+    span {
+      text-transform: uppercase;
+      margin-left: 25px;
+      margin-right: 25px;
+    }    
     
     a {
       text-decoration: none;
@@ -536,7 +559,7 @@ body {
   }
   
   &-content {
-    margin-bottom: 85px;    
+    margin-bottom: 90px;    
   }
   
   .support-item-photo {
@@ -589,10 +612,14 @@ body {
   } 
     
   .support-name {
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 0;
     font-size: @nav-font-size;
     font-weight: 600;
+    
+    span {
+      text-transform: uppercase;
+    }
   }
 
   .support-position {
@@ -645,7 +672,7 @@ body {
   
   .middle-header {
     margin-top: 83px;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     
     @media screen and (max-width: 1120px) {
       margin-top: 40px;
@@ -655,17 +682,19 @@ body {
   
   p {
     text-align: center;
+    padding: 0 100px;
+    line-height: @line-height;
   } 
 }
 
 form[name="subscribe"] {
-  margin-top: 50px;
+  margin-top: 45px;
   margin-bottom: 135px;
   text-align: center;
 
   input {
-    width: 28.72%;
-    padding: 18px 18px 18px 60px;
+    width: 28.0%;
+    padding: 15px 18px 15px 60px;
     margin-right: 12px;
     outline: none;
     border: 2px solid @light-color;
@@ -683,7 +712,7 @@ form[name="subscribe"] {
 }
 
 .btn {
-  padding: 18px 35px;
+  padding: 15px 35px;
   border: 2px solid @brand-color;
   .border-round-coner(4px);
   text-transform: uppercase;
@@ -700,6 +729,11 @@ form[name="subscribe"] {
 .blog-post {
   background: @bg-color-light url("../img/bg-blog_post.jpg") center no-repeat;
   background-size: cover;
+  
+  .middle-header {
+    font-weight: 600;
+    margin-bottom: 95px;
+  }
 }
 
 &-link {
@@ -712,12 +746,12 @@ form[name="subscribe"] {
   margin-bottom: 75px;
   
   &-content {
-    margin-bottom: 8px;
+    margin-bottom: 14px;
   }
   
   &-item {
     width: 44.35%;
-    margin-bottom: 53px;
+    margin-bottom: 60px;
     
     &:nth-child(odd) {
       float: left;
@@ -756,6 +790,8 @@ form[name="subscribe"] {
     
     .date-number {
       display: block;
+      margin-top: 2px;
+      margin-bottom: -4px;
       font-weight: 800;
       font-size: @base-font-size + 20;
     }
@@ -771,10 +807,11 @@ form[name="subscribe"] {
     padding-left: 100px;
     
     h4 {
-      margin-top: 0;
+      margin-top: -4px;
       margin-bottom: 4px;
       font-weight: 600;
       font-size: @nav-font-size;
+      text-transform: uppercase;
       color: @text-color;
       
       a {
@@ -828,16 +865,27 @@ form[name="subscribe"] {
   p {
     line-height: @line-height;
     margin: 0;
-    margin-bottom: 60px;
+    margin-bottom: 49px;
     text-align: center;
-    padding: 0 50px;
+    padding: 0 60px;
   }
 }
 
 /* Get in Touch Section */
+.touch {
+  .middle-header {
+    margin-bottom: 12px;
+  }
+  
+  p {
+    padding: 0 90px;
+  }
+}
+
 form[name="contactInform"] {
   position: relative;
-  margin-bottom: 70px;
+  margin-bottom: 65px;
+  padding: 0 52px;
   
   input {
     display: block;    
@@ -846,7 +894,7 @@ form[name="contactInform"] {
     width: 23.5%;
     margin-right: 2%;
     margin-bottom: 17px;
-    padding: 15px;
+    padding: 11px 15px;
     color: @text-color;
     outline: none;
     border: none;
@@ -872,11 +920,13 @@ form[name="contactInform"] {
     position: absolute;
     box-sizing: border-box;
     display: inline-block;
-    bottom: -25px;
+    bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
-    padding-left: 160px;
-    padding-right: 160px;
+    padding: 11px 175px;
+    font-weight: 700;
+    font-size: @nav-font-size;
+    text-transform: uppercase;
     border-radius: 0;
   }
 }
@@ -892,14 +942,14 @@ form[name="contactInform"] {
   li {
     display: inline-block;
     vertical-align: top;
-    margin: 0 12px;
+    margin: 0 16px;
     font-size: @mdl-font-size;
     
     a {
       display: block;
       position: relative;
-      width: 50px;
-      height: 50px;
+      width: 49px;
+      height: 49px;
       text-align: center;
       text-decoration: none;
       color: @light-color;
@@ -953,21 +1003,21 @@ form[name="contactInform"] {
 
 @media screen and (min-width: 1200px) {
   .checkout-text {
-    width: 55%;
+    width: 48%;
   }
   
   .checkout-image {
     display: block;
     width: 40%;
-    height: 450px;
+    height: 550px;
   }
 }
 
 @media screen and (min-width: 1250px) {
   
   .middle-header {
-    margin-top: 106px;
-    margin-bottom: 25px;
+    margin-top: 98px;
+    margin-bottom: 15px;
   }
   
   .checkout {
@@ -1409,7 +1459,7 @@ form[name="contactInform"] {
     margin-bottom: 0;
   }
   
-  .features {
+  .features {    
     p {
       font-size: 14px;
     }

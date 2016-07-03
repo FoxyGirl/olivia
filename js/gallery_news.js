@@ -1,15 +1,15 @@
 (function () {
   "use strict";
   
-  var countLine;  
-  var gallery = document.getElementById('galleryCount');
-  var contentBlock = gallery.getElementsByClassName('screenshorts-gallery-item');
-
-  // controls
-  var controlBlock = document.getElementById('scrGalControls');
+  var countNews;
+  var gallery = document.getElementById('galleryNews');
+  var contentBlock = gallery.getElementsByClassName('blog-post-slider-item');
+  
+  //controls
+  var controlBlock = document.getElementById('newsGalControls');
   var controls = controlBlock.getElementsByTagName('i');
   console.log('controls = ' + controls.length);
-    
+  
   resizeSlider();
   
   window.addEventListener('resize', resizeSlider);
@@ -17,43 +17,32 @@
   
   //перестроение слайдера
   function resizeSlider() {
-    console.log('!!!!!!!!');
-    
-    var contentBlock = gallery.getElementsByClassName('screenshorts-gallery-item');
-
-    var item = contentBlock[0];
-    
-    //ширина 1-го элемента
-    var itemWidth = item.clientWidth;
-    console.log('itemWidth = ' + itemWidth );  //  
-
-    var itemComputedStyle = getStyle(contentBlock[0]);
-    var itemMargin = parseInt(itemComputedStyle.marginLeft, 10);
-    console.log('itemMargin = ' + itemMargin);
-
-    //ширина всего блока 1-го элемента
-    itemWidth += 2 * itemMargin;
-    console.log('itemWidth = ' + itemWidth);
-    
+    console.log('!!!News!!!');
+          
     //ширина доступного окна 
     var windowWidth = document.documentElement.clientWidth;
     console.log('windowWidth = ' + windowWidth);
-    
-    //ширина галлереи
-    var galleryWidth = gallery.clientWidth;
-    console.log('galleryWidth = ' + galleryWidth);
-    galleryWidth += 2 * itemMargin;
 
-    countLine = Math.floor(galleryWidth / itemWidth);
-    console.log('countLine = ' + countLine);
- 
+    countNews = ( windowWidth > 850 ) ? 6 : 3;    
+    
+    //высота блока
+    var itemComputedStyle = getStyle(contentBlock[0]);
+    var itemHeight = parseInt(itemComputedStyle.height, 10);
+    var itemMarginB = parseInt(itemComputedStyle.marginBottom, 10);
+    console.log('itemHeight = ' + itemHeight);
+    console.log('countNews = ' + countNews);
+
+    var galleryHeight = 3 * (itemHeight + itemMarginB);
+    console.log('galleryHeight = ' + galleryHeight);
+    gallery.style.height =  galleryHeight + 'px';
+     
     var activeControl = 1;
     controlBlock.querySelector('.active').classList.remove('active');
     controls[activeControl - 1].classList.add('active');
     
-    showItems(countLine, activeControl, contentBlock);
+    showItems(countNews, activeControl, contentBlock);
     
-    var countContr = Math.ceil(contentBlock.length / countLine);
+    var countContr = Math.ceil(contentBlock.length / countNews);
     console.log('countContr = ' + countContr);
         
     //добавить недостающие контролы
@@ -73,8 +62,7 @@
       controls[i].style.display = 'none';    
     }
     
-  }
-  
+  }  
   
   function changeSlider(e) {
     var targetElem = e.target;
@@ -85,7 +73,7 @@
         controlBlock.querySelector('.active').classList.remove('active');
         controls[activeControl - 1].classList.add('active');
         
-        showItems(countLine, activeControl, contentBlock);
+        showItems(countNews, activeControl, contentBlock);
       }
   }
   
@@ -103,7 +91,7 @@
         contentBlock[i].style.display = 'none'; 
       }         
     }
-  }  
+  }
   
   //кросс-браузерное получение стилей элемента (elem)
   function getStyle(elem) {

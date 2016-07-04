@@ -1,14 +1,4 @@
 /*********** Mixins **************/
-/*
-.generate-labels(@n) when (@n > 0) {
-  @labelFor: checkSlide_@n;
-    
-  #checkSlide_@n:checked label[for=@labelFor] {
-    background-color: red;
-  }
-    .generate-labels(@n-1);
-}
-*/
 html,
 body {
   color: #ffffff;
@@ -54,7 +44,7 @@ body {
 .menu-toggler {
   display: none;
 }
-.menu-toggler:after {
+.menu-toggler::after {
   content: '\f0c9';
   position: absolute;
   left: 0;
@@ -68,6 +58,9 @@ body {
   margin-top: 45px;
 }
 .main-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   font-family: "Myriad Pro", Calibri, Arial, sans-serif;
   font-size: 18px;
   color: #ffffff;
@@ -76,20 +69,20 @@ body {
   background-color: transparent;
   border-radius: 21px;
   cursor: pointer;
-  padding: 11px 23px 6px;
+  padding: 9px 23px 8px;
 }
 .main-nav ul:hover li.active:hover {
   background-color: #a62ad7;
   border-radius: 21px;
   cursor: pointer;
-  padding: 11px 23px 6px;
+  padding: 9px 23px 8px;
 }
 .main-nav ul:hover li a:hover,
-.main-nav ul:hover li:active {
+.main-nav ul:hover li a:active {
   background-color: #a62ad7;
   border-radius: 21px;
   cursor: pointer;
-  padding: 11px 23px 6px;
+  padding: 9px 23px 8px;
 }
 .main-nav ul li {
   display: inline-block;
@@ -100,14 +93,14 @@ body {
   background-color: #a62ad7;
   border-radius: 21px;
   cursor: pointer;
-  padding: 11px 23px 6px;
+  padding: 9px 23px 8px;
 }
 .main-nav ul li a {
   display: block;
   background-color: transparent;
   border-radius: 21px;
   cursor: pointer;
-  padding: 11px 23px 6px;
+  padding: 9px 23px 8px;
   color: #ffffff;
   text-decoration: none;
 }
@@ -320,8 +313,8 @@ body {
   display: block;
   position: relative;
 }
-.screenshorts-gallery-item a:hover:before,
-.screenshorts-gallery-item a:active:before {
+.screenshorts-gallery-item a:hover::before,
+.screenshorts-gallery-item a:active::before {
   content: '';
   display: block;
   position: absolute;
@@ -356,9 +349,6 @@ body {
   min-height: 279px;
   margin-top: 135px;
   margin-bottom: 40px;
-  /*
-    .generate-labels(3);
-*/
 }
 .slider-content {
   position: relative;
@@ -416,7 +406,7 @@ body {
   margin-bottom: 37px;
   line-height: 1.9;
 }
-.slider-item-blockquote:before {
+.slider-item-blockquote::before {
   content: "“";
   display: block;
   position: absolute;
@@ -428,7 +418,7 @@ body {
 .slider-item-blockquote .text-end {
   position: relative;
 }
-.slider-item-blockquote .text-end:after {
+.slider-item-blockquote .text-end::after {
   content: "„";
   position: absolute;
   right: -45px;
@@ -581,17 +571,12 @@ body {
   margin-top: 83px;
   margin-bottom: 35px;
 }
-@media screen and (max-width: 1120px) {
-  .newsletter .middle-header {
-    margin-top: 40px;
-    margin-bottom: 15px;
-  }
-}
 .newsletter p {
   text-align: center;
   padding: 0 100px;
   line-height: 1.9;
 }
+/* Subscribe */
 form[name="subscribe"] {
   margin-top: 45px;
   margin-bottom: 135px;
@@ -642,17 +627,17 @@ form[name="subscribe"] input[type="email"] {
   font-weight: 600;
   margin-bottom: 95px;
 }
--link a {
+.blog-post-link a {
   word-break: break-all;
 }
 .blog-post-slider {
   margin-bottom: 75px;
 }
 .blog-post-slider-content {
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 .blog-post-slider-item {
-  width: 44.35%;
+  width: 45%;
   margin-bottom: 60px;
 }
 .blog-post-slider-item:nth-child(odd) {
@@ -670,7 +655,7 @@ form[name="subscribe"] input[type="email"] {
   color: #ffffff;
   background-color: #a62ad7;
 }
-.blog-post-slider-date:after {
+.blog-post-slider-date::after {
   content: "";
   position: absolute;
   right: -10px;
@@ -688,7 +673,7 @@ form[name="subscribe"] input[type="email"] {
 .blog-post-slider-date.special-date {
   background-color: #4183f1;
 }
-.blog-post-slider-date.special-date:after {
+.blog-post-slider-date.special-date::after {
   width: 0;
   height: 0;
   border-width: 20px;
@@ -775,10 +760,12 @@ form[name="subscribe"] input[type="email"] {
 /* Get in Touch Section */
 .touch .middle-header {
   margin-bottom: 12px;
+  font-weight: 600;
 }
 .touch p {
-  padding: 0 90px;
+  padding: 0 110px;
 }
+/* Contact Inform */
 form[name="contactInform"] {
   position: relative;
   margin-bottom: 65px;
@@ -834,7 +821,7 @@ form[name="contactInform"] .btn-submit {
   left: 50%;
   transform: translateX(-50%);
   padding: 11px 175px;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 18px;
   text-transform: uppercase;
   border-radius: 0;
@@ -888,7 +875,7 @@ form[name="contactInform"] .btn-submit {
 .copyright li {
   display: inline-block;
   font-size: 16px;
-  margin: 0 8px 10px;
+  margin: 0 5px 10px;
 }
 .copyright a {
   display: block;
@@ -903,16 +890,6 @@ form[name="contactInform"] .btn-submit {
   text-shadow: 1px 2px 5px #641982, 1px 2px 0 #641982;
 }
 /* Responsive */
-@media screen and (min-width: 1200px) {
-  .checkout-text {
-    width: 48%;
-  }
-  .checkout-image {
-    display: block;
-    width: 40%;
-    height: 550px;
-  }
-}
 @media screen and (min-width: 1250px) {
   .middle-header {
     margin-top: 98px;
@@ -925,20 +902,45 @@ form[name="contactInform"] .btn-submit {
     margin-bottom: 115px;
   }
 }
+@media screen and (min-width: 1200px) {
+  .checkout-text {
+    width: 48%;
+  }
+  .checkout-image {
+    display: block;
+    width: 40%;
+    height: 550px;
+  }
+}
 @media screen and (min-width: 900px) and (max-width: 1199px) {
   .checkout-text {
     width: 65%;
   }
   .checkout-image {
     display: block;
+    right: 0;
     width: 30%;
     height: 330px;
   }
 }
+@media screen and (max-width: 1190px) {
+  form[name="contactInform"] .btn-submit {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
 @media screen and (max-width: 1120px) {
-  .checkout h2 {
+  .newsletter .middle-header {
     margin-top: 40px;
     margin-bottom: 15px;
+  }
+  .blog-post .middle-header {
+    margin-top: 40px;
+    margin-bottom: 35px;
+  }
+  .support .middle-header {
+    margin-top: 40px;
+    margin-bottom: 35px;
   }
   .slider-item-text {
     padding-right: 10px;
@@ -946,6 +948,7 @@ form[name="contactInform"] .btn-submit {
 }
 @media screen and (max-width: 1080px) {
   form[name="contactInform"] .btn-submit {
+    width: 80%;
     padding-left: 60px;
     padding-right: 60px;
   }
@@ -974,6 +977,51 @@ form[name="contactInform"] .btn-submit {
   .support .support-item:nth-child(odd),
   .support .support-item:nth-child(even) {
     float: none;
+  }
+}
+@media screen and (max-width: 981px) {
+  .main-header .header-logo {
+    margin-top: 20px;
+  }
+  .main-nav {
+    float: right;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .main-nav ul {
+    font-size: 16px;
+  }
+  .main-nav ul li a:hover,
+  .main-nav ul li:active {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+  .header-slider {
+    margin-top: 50px;
+  }
+  .features p {
+    padding: 0 10px;
+  }
+  .features-all {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  .checkout .middle-header {
+    margin-top: 40px;
+    margin-bottom: 15px;
+  }
+  .screenshots .middle-header {
+    margin-top: 40px;
+    margin-bottom: 15px;
+  }
+  .newsletter p {
+    padding: 0;
+  }
+  .touch p {
+    padding: 0;
+  }
+  form[name="contactInform"] {
+    padding: 0;
   }
 }
 @media screen and (max-width: 850px) {
@@ -1062,26 +1110,6 @@ form[name="contactInform"] .btn-submit {
     background-position: 0 -400px;
   }
 }
-@media screen and (max-width: 800px) {
-  .main-header .header-logo {
-    margin-top: 20px;
-  }
-  .main-nav {
-    float: right;
-    margin-top: 25px;
-  }
-  .main-nav ul {
-    font-size: 16px;
-  }
-  .main-nav ul li a:hover,
-  .main-nav ul li:active {
-    padding-left: 13px;
-    padding-right: 13px;
-  }
-  .header-slider {
-    margin-top: 50px;
-  }
-}
 @media screen and (max-width: 745px) {
   body {
     padding-top: 50px;
@@ -1113,7 +1141,7 @@ form[name="contactInform"] .btn-submit {
     margin-top: 8px;
     cursor: pointer;
   }
-  input:checked ~ .menu-toggler:after {
+  input:checked ~ .menu-toggler::after {
     content: "\f00d";
     margin-top: -2px;
   }
@@ -1240,10 +1268,10 @@ form[name="contactInform"] .btn-submit {
     margin-right: 25px;
     margin-top: 15px;
   }
-  .slider-item-blockquote:before {
+  .slider-item-blockquote::before {
     left: 105px;
   }
-  .slider-item-blockquote .text-end:after {
+  .slider-item-blockquote .text-end::after {
     right: -30px;
   }
   .screenshorts-gallery-controls,

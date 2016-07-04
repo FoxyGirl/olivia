@@ -32,6 +32,12 @@
 
 /*********** Mixins **************/
 
+.ul-clear() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .linear-gradient(@angle; @bg-color-1; @bg-color-2) {
   background-image: linear-gradient(@angle, @bg-color-1, @bg-color-2);
 }
@@ -53,7 +59,7 @@
   background-color: @color;
   .border-round-coner();
   cursor: pointer;
-  padding: 11px 23px 6px;
+  padding: 9px 23px 8px;
 }
 
 .controls(@color: @brand-color) {
@@ -115,16 +121,7 @@
     border-bottom-color: transparent;
     border-left-style: none;
 }
-/*
-.generate-labels(@n) when (@n > 0) {
-  @labelFor: checkSlide_@n;
-    
-  #checkSlide_@n:checked label[for=@labelFor] {
-    background-color: red;
-  }
-    .generate-labels(@n-1);
-}
-*/
+
 .generate-colors(@n) when (@n > 0) {
     .monster-@{n} {
         background-color: spin(@red, @n * 20);

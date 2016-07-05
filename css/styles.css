@@ -55,7 +55,7 @@ body {
 }
 .main-nav {
   float: right;
-  margin-top: 45px;
+  margin-top: 65px;
 }
 .main-nav ul {
   margin: 0;
@@ -274,11 +274,9 @@ body {
 .checkout-image {
   display: none;
   position: absolute;
-  bottom: 0;
-  right: 162px;
+  bottom: -5px;
+  right: 145px;
   width: 45%;
-  height: 550px;
-  overflow: hidden;
 }
 .checkout-image img {
   max-width: 100%;
@@ -909,7 +907,6 @@ form[name="contactInform"] .btn-submit {
   .checkout-image {
     display: block;
     width: 40%;
-    height: 550px;
   }
 }
 @media screen and (min-width: 900px) and (max-width: 1199px) {
@@ -920,7 +917,6 @@ form[name="contactInform"] .btn-submit {
     display: block;
     right: 0;
     width: 30%;
-    height: 330px;
   }
 }
 @media screen and (max-width: 1190px) {
@@ -1191,19 +1187,6 @@ form[name="contactInform"] .btn-submit {
   .main-nav ul li a:active {
     border-radius: 0;
   }
-  /*
-  .main-nav {
-    display: none;
-    float: none;
-    text-align: left;
-    
-    li {
-      display: block;
-      float: none;
-      margin-right: 0;
-    }
-  }
-  */
 }
 @media screen and (max-width: 690px) {
   .slider {
@@ -1312,6 +1295,36 @@ form[name="contactInform"] .btn-submit {
   }
 }
 @media screen and (max-width: 360px) {
+  .middle-header {
+    font-size: 32px;
+  }
+  .header-slider {
+    margin-bottom: 40px;
+  }
+  .header-slider-img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .header-slider-download h5 {
+    font-size: 28px;
+  }
+  .header-slider-download a {
+    width: 140px;
+    margin-right: 15px;
+  }
+  .checkout-text h3 {
+    padding-left: 55px;
+  }
+  .checkout-text h3 .checkout-fa {
+    font-size: 28px;
+    top: 0;
+  }
+  .checkout-text p {
+    padding-left: 55px;
+  }
+  .screenshorts-gallery-item img {
+    width: 190px;
+  }
   .blog-post-slider-date {
     width: 65px;
   }
@@ -1320,6 +1333,25 @@ form[name="contactInform"] .btn-submit {
   }
   .blog-post-slider-text a {
     word-break: break-all;
+  }
+  .support address {
+    margin-bottom: 40px;
+  }
+  .support-item:nth-child(odd) .support-item-photo {
+    margin-bottom: 20px;
+  }
+  .support-item:nth-child(odd) .support-item-text {
+    margin-right: 0;
+    clear: both;
+    border-top: 1px solid transparent;
+  }
+  .support-item:nth-child(even) .support-item-photo {
+    margin-bottom: 20px;
+  }
+  .support-item:nth-child(even) .support-item-text {
+    margin-left: 0;
+    clear: both;
+    border-top: 1px solid transparent;
   }
   form[name="contactInform"] {
     margin-bottom: 50px;
@@ -1331,6 +1363,10 @@ form[name="contactInform"] .btn-submit {
   }
   form[name="contactInform"] textarea {
     font-size: 14px;
+  }
+  form[name="contactInform"] .btn-submit {
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .main-footer p {
     font-size: 14px;

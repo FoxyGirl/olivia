@@ -908,6 +908,29 @@ form[name="contactInform"] .btn-submit {
 .arrow-top:hover::before {
   opacity: 1;
 }
+/* If no JS */
+.no-js .screenshorts-gallery-content {
+  max-height: 487px;
+  overflow-y: auto;
+}
+.no-js .blog-post-slider-content {
+  max-height: 500px;
+  overflow-y: auto;
+}
+.no-js .screenshorts-gallery-controls i,
+.no-js .blog-post-slider-controls i {
+  display: none;
+}
+@media screen and (max-width: 850px) {
+  .no-js .blog-post-slider-content {
+    max-height: 300px;
+  }
+}
+@media screen and (max-width: 555px) {
+  .no-js .screenshorts-gallery-content {
+    max-height: 270px;
+  }
+}
 /* Responsive */
 @media screen and (min-width: 1250px) {
   .middle-header {

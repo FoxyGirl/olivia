@@ -1,4 +1,5 @@
-(function () {
+/* jshint browser: true */
+;(function () {
   "use strict";
   
   var html = document.documentElement;

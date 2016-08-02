@@ -1,4 +1,5 @@
-(function () {
+/* jshint browser: true */
+;(function () {
   "use strict";
   
   var countNews;
@@ -8,7 +9,6 @@
   //controls
   var controlBlock = document.getElementById('newsGalControls');
   var controls = controlBlock.getElementsByTagName('i');
-  console.log('controls = ' + controls.length);
   
   resizeSlider();
   
@@ -16,12 +16,9 @@
   controlBlock.addEventListener('click', changeSlider);
   
   //перестроение слайдера
-  function resizeSlider() {
-    console.log('!!!News!!!');
-          
+  function resizeSlider() {      
     //ширина доступного окна 
     var windowWidth = document.documentElement.clientWidth;
-    console.log('windowWidth = ' + windowWidth);
 
     countNews = ( windowWidth > 850 ) ? 6 : 3;    
     
@@ -29,11 +26,8 @@
     var itemComputedStyle = getStyle(contentBlock[0]);
     var itemHeight = parseInt(itemComputedStyle.height, 10);
     var itemMarginB = parseInt(itemComputedStyle.marginBottom, 10);
-    console.log('itemHeight = ' + itemHeight);
-    console.log('countNews = ' + countNews);
 
     var galleryHeight = 3 * (itemHeight + itemMarginB);
-    console.log('galleryHeight = ' + galleryHeight);
     gallery.style.height =  galleryHeight + 'px';
      
     var activeControl = 1;
@@ -43,7 +37,6 @@
     showItems(countNews, activeControl, contentBlock);
     
     var countContr = Math.ceil(contentBlock.length / countNews);
-    console.log('countContr = ' + countContr);
         
     //добавить недостающие контролы
     while (controls.length < countContr) {
@@ -68,7 +61,6 @@
     var targetElem = e.target;
     if (targetElem.tagName != 'I')  
       {return; } else {
-        console.log("!! " + targetElem.getAttribute('data-toggler'));
         var activeControl = targetElem.getAttribute('data-toggler');
         controlBlock.querySelector('.active').classList.remove('active');
         controls[activeControl - 1].classList.add('active');
@@ -80,12 +72,10 @@
   function showItems(countLine, activeControl, contentBlock) {
     var start = (activeControl - 1) * countLine;
     var end = activeControl * countLine - 1;
-    console.log('start = ' + start);
-    console.log('end = ' + end);
+
     // показали нужные блоки и спрятали лишние 
     for (var i = 0, length = contentBlock.length; i < length; i++ ) {      
-      if  ( ( i >= start ) && ( i <= end ) )
-      {
+      if  ( ( i >= start ) && ( i <= end ) ) {
         contentBlock[i].style.display = ''; 
       } else {
         contentBlock[i].style.display = 'none'; 

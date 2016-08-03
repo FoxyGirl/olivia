@@ -13,15 +13,21 @@
   
   //window.addEventListener('resize', resizeSlider);
   
-  var help = debounce(resizeSlider, 200, false);
-  window.addEventListener('resize', help);
+  var debounceResize = debounce(resizeSlider, 300, false);
+  window.addEventListener('resize', debounceResize);
   controlBlock.addEventListener('click', changeSlider);
   
   /*************************************************************/
   
   // slider resizing
+  /** @function resizeSlider
+   * Depending on the current window width 
+   * Calculates count items in one line 
+   * Adds and shows nessary controls    
+   * Activates 1-st control
+   * Shows only nessary items of gallery
+   */  
   function resizeSlider() {
-    
     var item = contentBlock[0],  //1-st element
         itemWidth = item.clientWidth,  //1-st element width
         itemComputedStyle = getStyle(contentBlock[0]),
@@ -68,6 +74,11 @@
   }
   
   // slider changing
+  /** @function changeSlider
+   * @param {Event} click : use for determinate e.target
+   * Activates corresponding control
+   * and shows only nessary items of gallery using function showItems 
+   */
   function changeSlider(e) {
     var targetElem = e.target;
     if (targetElem.tagName != 'I')  
@@ -79,10 +90,13 @@
       }
   }
   
-  // show item of gallery 
-  // countLine:@Number = count item in line;
-  // activeControl:@Number = num of active control;
-  // contentBlock:@element = content Block of items
+  //show item of gallery 
+  /** @function showItems
+   * @param {Number} countLine : count of items in line
+   * @param {Number} activeControl : num of active control
+   * @param {element} contentBlock : element collection of items in gallery
+   * Shows only nessary items of gallery
+   */
   function showItems(countLine, activeControl, contentBlock) {
     var start = (activeControl - 1) * countLine;
     var end = activeControl * countLine - 1;
@@ -99,6 +113,9 @@
   }  
   
   //cross-browser style getting for element (elem)
+  /** @function getStyle
+   * @param {HTMLElement} elem : HTML element  
+   */
   function getStyle(elem) {
     return window.getComputedStyle ? getComputedStyle(elem, "") : elem.currentStyle;
   }
@@ -107,19 +124,21 @@
   // be triggered. The function will be called after it stops being called for
   // N milliseconds. If `immediate` is passed, trigger the function on the
   // leading edge, instead of the trailing.
+  /** @function debounce
+   * @param {function} func : function for execute one time in wait milliseconds 
+   * @param {Number} wait : milliseconds 
+   * @param {Boolean} immediate : trigger the function on the leading edge, 
+   * instead of the trailing
+   */
   function debounce(func, wait, immediate) {
-  console.log('debounce');
     var timeout;
     return function () {
-        console.log('debounce 2');
-
         var context = this, args = arguments;
         var later = function () {
             timeout = null;
             if (!immediate) func.apply(context, args);
         };
         var callNow = immediate && !timeout;
-      console.log('callNow ' + callNow);
         clearTimeout(timeout);
         timeout = setTimeout(later, wait);
         if (callNow) func.apply(context, args);

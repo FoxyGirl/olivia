@@ -12,7 +12,10 @@
   
   resizeSlider();
   
-  window.addEventListener('resize', resizeSlider);
+  //window.addEventListener('resize', resizeSlider);
+  
+  var debounceResizeBlog = debounce(resizeSlider, 200, false);
+  window.addEventListener('resize', debounceResizeBlog);
   controlBlock.addEventListener('click', changeSlider);
   
   //перестроение слайдера
@@ -51,8 +54,8 @@
     }
 
     // спрятали лишние контролы
-    for (var i = countContr, length = controls.length; i < length; i++) {
-      controls[i].style.display = 'none';    
+    for (var j = countContr, length = controls.length; j < length; j++) {
+      controls[j].style.display = 'none';    
     }
     
   }  
@@ -87,5 +90,30 @@
   function getStyle(elem) {
     return window.getComputedStyle ? getComputedStyle(elem, "") : elem.currentStyle;
   }
+  
+  // Returns a function, that, as long as it continues to be invoked, will not
+  // be triggered. The function will be called after it stops being called for
+  // N milliseconds. If `immediate` is passed, trigger the function on the
+  // leading edge, instead of the trailing.
+  /** @function debounce
+   * @param {function} func : function for execute one time in wait milliseconds 
+   * @param {Number} wait : milliseconds 
+   * @param {Boolean} immediate : trigger the function on the leading edge, 
+   * instead of the trailing
+   */
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function () {
+        var context = this, args = arguments;
+        var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+  }  
   
 })();

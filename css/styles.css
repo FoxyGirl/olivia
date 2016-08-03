@@ -300,6 +300,7 @@ body {
 }
 .screenshorts-gallery-content {
   margin: 0 -17px 16px -17px;
+  max-height: 487px;
   overflow: hidden;
 }
 .screenshorts-gallery-item {

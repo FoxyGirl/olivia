@@ -3,7 +3,7 @@
   /* Window Scrolling */
   "use strict";  
   /** @constant
-   * @type {number} HEIGHT_SHOW : min height for window scrolling 50px
+   *  @type {number} HEIGHT_SHOW : min height for window scrolling 50px
    */
   var HEIGHT_SHOW = 50,
   /** trigger for using function toUp in callback

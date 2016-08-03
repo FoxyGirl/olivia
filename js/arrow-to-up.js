@@ -1,9 +1,14 @@
 /* jshint browser: true */
 ;(function () {
-  "use strict";
-  
   /* Window Scrolling */
-  var HEIGHT_SHOW = 50,  //min height for window scrollung 50px
+  "use strict";  
+  /** @constant
+   * @type {number} HEIGHT_SHOW : min height for window scrolling 50px
+   */
+  var HEIGHT_SHOW = 50,
+  /** trigger for using function toUp in callback
+   *  @type {boolean}
+   */
       upTrigger,
       el = document.getElementById('toUp');
   //if window scrolling more than HEIGHT_SHOW to show toUp anchor
@@ -21,6 +26,10 @@
   }, false);
 
   //function window scrolling
+  /** @function toUp
+   *  To scroll window to up using requestAnimationFrame
+   *  Change upTrigger according condition (window.pageYOffset > 0) ? false : true
+   */
   function toUp() {    
     upTrigger = false;
     //speed depends from distance to top

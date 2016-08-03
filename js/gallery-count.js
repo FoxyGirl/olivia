@@ -2,42 +2,39 @@
 ;(function () {
   "use strict";
   
-  var countLine;  
-  var gallery = document.getElementById('galleryCount');
-  var contentBlock = gallery.getElementsByClassName('screenshorts-gallery-item');
-
-  // controls
-  var controlBlock = document.getElementById('scrGalControls');
-  var controls = controlBlock.getElementsByTagName('i');
+  var countLine,  
+      gallery = document.getElementById('galleryCount'),
+      contentBlock = gallery.getElementsByClassName('screenshorts-gallery-item'),
+      // controls
+      controlBlock = document.getElementById('scrGalControls'),
+      controls = controlBlock.getElementsByTagName('i');
     
   resizeSlider();
   
   window.addEventListener('resize', resizeSlider);
   controlBlock.addEventListener('click', changeSlider);
   
-  //перестроение слайдера
+  /*************************************************************/
+  
+  // slider resizing
   function resizeSlider() {
     
-    var contentBlock = gallery.getElementsByClassName('screenshorts-gallery-item');
+    var item = contentBlock[0],  //1-st element
+        itemWidth = item.clientWidth,  //1-st element width
+        itemComputedStyle = getStyle(contentBlock[0]),
+        itemMargin = parseInt(itemComputedStyle.marginLeft, 10); //1-st element margin
 
-    var item = contentBlock[0];
-    
-    //ширина 1-го элемента
-    var itemWidth = item.clientWidth;
-
-    var itemComputedStyle = getStyle(contentBlock[0]);
-    var itemMargin = parseInt(itemComputedStyle.marginLeft, 10);
-
-    //ширина всего блока 1-го элемента
+    //full block width for 1-st element
     itemWidth += 2 * itemMargin;
     
-    //ширина доступного окна 
+    //window width
     var windowWidth = document.documentElement.clientWidth;
     
-    //ширина галлереи
+    //gallery width
     var galleryWidth = gallery.clientWidth;
     galleryWidth += 2 * itemMargin;
-
+    
+    //count of items in line
     countLine = Math.floor(galleryWidth / itemWidth);
  
     var activeControl = 1;
@@ -48,43 +45,46 @@
     
     var countContr = Math.ceil(contentBlock.length / countLine);
         
-    //добавить недостающие контролы
+    // add controls 
     while (controls.length < countContr) {
       var controlNew = document.createElement('i');
       controlNew.setAttribute('data-toggler', (controls.length + 1));
       controlBlock.appendChild(controlNew);
     }
     
-    // показали нужные контролы
+    // show necessary controls
     for (var i = 0; i < countContr; i++) {
       controls[i].style.display = '';    
     }
 
-    // спрятали лишние контролы
+    // hide unnecessary controls
     for (var j = countContr, length = controls.length; j < length; j++) {
       controls[j].style.display = 'none';    
     }
     
   }
   
-  
+  // slider changing
   function changeSlider(e) {
     var targetElem = e.target;
     if (targetElem.tagName != 'I')  
       {return; } else {
         var activeControl = targetElem.getAttribute('data-toggler');
         controlBlock.querySelector('.active').classList.remove('active');
-        controls[activeControl - 1].classList.add('active');
-        
+        controls[activeControl - 1].classList.add('active');        
         showItems(countLine, activeControl, contentBlock);
       }
   }
   
+  // show item of gallery 
+  // countLine:@Number = count item in line;
+  // activeControl:@Number = num of active control;
+  // contentBlock:@element = content Block of items
   function showItems(countLine, activeControl, contentBlock) {
     var start = (activeControl - 1) * countLine;
     var end = activeControl * countLine - 1;
     
-     // показали нужные блоки и спрятали лишние 
+    // show necessary blocks and hide unnecessary blocks 
     for (var i = 0, length = contentBlock.length; i < length; i++ ) {      
       if  ( ( i >= start ) && ( i <= end ) )
       {
@@ -95,7 +95,7 @@
     }
   }  
   
-  //кросс-браузерное получение стилей элемента (elem)
+  //cross-browser style getting for element (elem)
   function getStyle(elem) {
     return window.getComputedStyle ? getComputedStyle(elem, "") : elem.currentStyle;
   }

@@ -603,7 +603,7 @@ form[name="subscribe"] input:-ms-input-placeholder {
 form[name="subscribe"] input[type="email"] {
   background-image: url("../img/sprite-img.png");
   background-repeat: no-repeat;
-  background-position: -34px -807px;
+  background-position: -34px -810px;
 }
 .btn {
   padding: 15px 35px;
@@ -1033,7 +1033,7 @@ form[name="contactInform"] .btn-submit {
     font-size: 16px;
   }
   .main-nav ul li a:hover,
-  .main-nav ul li:active {
+  .main-nav ul li a:active {
     padding-left: 13px;
     padding-right: 13px;
   }

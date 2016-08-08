@@ -78,7 +78,7 @@ body {
     color: @light-color;
     
     &:hover {
-      li {
+      a {
         &.active {
           .active-nav(transparent);
           
@@ -87,8 +87,8 @@ body {
           }
         }
         
-        a:hover,
-        a:active {
+        &:hover,
+        &:active {
           .active-nav();
         }
       }
@@ -97,17 +97,18 @@ body {
     li {
       display: inline-block;      
       text-transform: uppercase;
-      list-style: none;
-      
-      &.active {
-        .active-nav();
-      }
+      list-style: none;      
       
       a {
         display: block;
         .active-nav(transparent);
         color: @light-color;
-        text-decoration: none;        
+        text-decoration: none;
+        
+        &.active {
+          .active-nav();
+        }
+      
       }
       
       &:last-child {
@@ -1211,10 +1212,9 @@ form[name="contactInform"] {
     ul {
       font-size: @base-font-size;
       
-      li {
-        
-        a:hover,
-        a:active {
+      a {        
+        &:hover,
+        &:active {
           padding-left: 13px;
           padding-right: 13px;
         }
@@ -1451,7 +1451,8 @@ form[name="contactInform"] {
       
       &:hover {
         
-        li { 
+        a {
+          border-radius: 0;
           
           &.active {
             background-color: @bg-color;
@@ -1462,8 +1463,8 @@ form[name="contactInform"] {
             }
           }
           
-          a:hover,
-          a:active {
+          &:hover,
+          &:active {
             border-radius: 0;
           }
         }
@@ -1472,7 +1473,7 @@ form[name="contactInform"] {
       li {
         display: block;      
      
-        &.active {
+        a.active {
           border-radius: 0;
           border-top: 1px solid @bg-color-light;     
         }

@@ -65,20 +65,20 @@ body {
   font-size: 18px;
   color: #ffffff;
 }
-.main-nav ul:hover li.active {
+.main-nav ul:hover a.active {
   background-color: transparent;
   border-radius: 21px;
   cursor: pointer;
   padding: 9px 23px 8px;
 }
-.main-nav ul:hover li.active:hover {
+.main-nav ul:hover a.active:hover {
   background-color: #a62ad7;
   border-radius: 21px;
   cursor: pointer;
   padding: 9px 23px 8px;
 }
-.main-nav ul:hover li a:hover,
-.main-nav ul:hover li a:active {
+.main-nav ul:hover a:hover,
+.main-nav ul:hover a:active {
   background-color: #a62ad7;
   border-radius: 21px;
   cursor: pointer;
@@ -89,12 +89,6 @@ body {
   text-transform: uppercase;
   list-style: none;
 }
-.main-nav ul li.active {
-  background-color: #a62ad7;
-  border-radius: 21px;
-  cursor: pointer;
-  padding: 9px 23px 8px;
-}
 .main-nav ul li a {
   display: block;
   background-color: transparent;
@@ -103,6 +97,12 @@ body {
   padding: 9px 23px 8px;
   color: #ffffff;
   text-decoration: none;
+}
+.main-nav ul li a.active {
+  background-color: #a62ad7;
+  border-radius: 21px;
+  cursor: pointer;
+  padding: 9px 23px 8px;
 }
 .main-nav ul li:last-child {
   margin-right: 0;
@@ -1032,8 +1032,8 @@ form[name="contactInform"] .btn-submit {
   .main-nav ul {
     font-size: 16px;
   }
-  .main-nav ul li a:hover,
-  .main-nav ul li a:active {
+  .main-nav ul a:hover,
+  .main-nav ul a:active {
     padding-left: 13px;
     padding-right: 13px;
   }
@@ -1205,21 +1205,24 @@ form[name="contactInform"] .btn-submit {
     margin: 0;
     padding: 0;
   }
-  .main-nav ul:hover li.active {
+  .main-nav ul:hover a {
+    border-radius: 0;
+  }
+  .main-nav ul:hover a.active {
     background-color: #907bea;
     border-radius: 0;
   }
-  .main-nav ul:hover li.active:hover {
+  .main-nav ul:hover a.active:hover {
     border-radius: 0;
   }
-  .main-nav ul:hover li a:hover,
-  .main-nav ul:hover li a:active {
+  .main-nav ul:hover a:hover,
+  .main-nav ul:hover a:active {
     border-radius: 0;
   }
   .main-nav ul li {
     display: block;
   }
-  .main-nav ul li.active {
+  .main-nav ul li a.active {
     border-radius: 0;
     border-top: 1px solid #ffffff;
   }

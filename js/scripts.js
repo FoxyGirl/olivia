@@ -238,25 +238,65 @@
       if (!upTrigger) { return; }
       toUp();
   }, false);
+})();
 
-  //function window scrolling
-  /** @function toUp
-   *  To scroll window to up using requestAnimationFrame
-   *  Change upTrigger according condition (window.pageYOffset > 0) ? false : true
-   */
-  function toUp() {    
+
+/* Menu Scrolling */
+;(function () {
+  /* Menu Scrolling */
+    "use strict";
+    /** @constant
+     *  @type {number} HEIGHT_SHOW : min height for window scrolling 50px
+     */
+    var upTrigger,
+        /** trigger for using function toUp in callback
+         *  @type {boolean}
+         */
+        nav = document.getElementById('mainNav'),
+        linksNav = nav.querySelectorAll('a'),
+        navToggler = document.getElementById('menuToggler');
+    var V = 0.2; // скорость, может иметь дробное значение через точку
+
+    for (var i = 0; i < linksNav.length; i++) {
+      linksNav[i].addEventListener('click', function(e) {
+          e.preventDefault();
+          var w = window.pageYOffset,  // прокрутка
+              hash = this.hash;
+          var t = document.querySelector(hash).getBoundingClientRect().top - 10,  // отступ от окна браузера до id
+              start = null;
+          requestAnimationFrame(step);  // подробнее про функцию анимации [developer.mozilla.org]
+          function step(time) {
+              if (start === null) start = time;
+              var progress = time - start,
+                  r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
+              window.scrollTo(0,r);
+              if (r != w + t) {
+                  requestAnimationFrame(step)
+              } else {
+                  location.hash = hash;  // URL с хэшем
+                  navToggler.click();
+              }
+          }
+      }, false);
+    }
+})();
+
+//function window scrolling
+/** @function toUp
+ *  To scroll window to up using requestAnimationFrame
+ *  Change upTrigger according condition (window.pageYOffset > 0) ? false : true
+ */
+function toUp() {
     upTrigger = false;
     //speed depends from distance to top
     var speed = window.pageYOffset/10;
     window.scrollBy(0,-speed);
-    if (window.pageYOffset > 0) { 
-      requestAnimationFrame(toUp); 
+    if (window.pageYOffset > 0) {
+        requestAnimationFrame(toUp);
     } else {
-      upTrigger = true;
+        upTrigger = true;
     }
-  }  
-  
-})();
+}
 
   //cross-browser style getting for element (elem)
   /** @function getStyle
